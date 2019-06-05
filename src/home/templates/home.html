@@ -3,18 +3,22 @@
 {% block head_title %}Home{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+
+<nav class="container-fluid">
    <div class="row">
-      <div class="col-sm-4">
-         <img class="img-menu" src="{% static 'img/kick.jpg' %}" alt="Kick scooter">
+      <div class="col-md-4 card-menu--padding">
+         <h2 class="text-center">Kick Scooters</h2>
+         <img class="img-menu" src="{% static 'img/kick_scooter.jpg' %}" alt="Kick scooter">
       </div>
-      <div class="col-sm-4">
-         <img class="img-menu" src="{% static 'img/escooter.png' %}" alt="Eletric scooter">
+      <div class="col-md-4 card-menu--padding">
+         <h2 class="text-center">eScooters</h2>
+         <img class="img-menu" src="{% static 'img/eScooter.jpg' %}" alt="Eletric scooter">
       </div>
-      <div class="col-sm-4">
-         <img class="img-menu" src="{% static 'img/kid.jpg' %}" alt="Scooter for kids">
+      <div class="col-md-4 card-menu--padding">
+         <h2 class="text-center">Scooters for kids</h2>
+         <img class="img-menu" src="{% static 'img/kid_scooter.jpg' %}" alt="Scooter for kids">
       </div>
    </div>
-</div>
+</nav>
 
 {% endblock %}
