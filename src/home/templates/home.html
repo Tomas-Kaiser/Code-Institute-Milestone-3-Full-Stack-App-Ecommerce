@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head_title %}Home{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-sm-4">
+         <img class="img-menu" src="{% static 'img/kick.jpg' %}" alt="Kick scooter">
+      </div>
+      <div class="col-sm-4">
+         <img class="img-menu" src="{% static 'img/escooter.png' %}" alt="Eletric scooter">
+      </div>
+      <div class="col-sm-4">
+         <img class="img-menu" src="{% static 'img/kid.jpg' %}" alt="Scooter for kids">
+      </div>
+   </div>
+</div>
+
+{% endblock %}

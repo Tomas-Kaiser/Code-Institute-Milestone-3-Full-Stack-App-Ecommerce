@@ -1,0 +1,12 @@
+.navbar-brand-center {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.img-menu {
+   max-width: 100%;
+   height: 80vh;
+   object-fit: cover;
+   object-position: center center;
+}
