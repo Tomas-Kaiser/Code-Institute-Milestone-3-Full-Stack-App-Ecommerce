@@ -1,5 +1,10 @@
 h2 {
    margin: 0;
+   font-size: 1.4rem;
+}
+
+.navbar-brand {
+   font-size: 1.8rem;
 }
 
 .navbar-brand-center {
@@ -10,10 +15,17 @@ h2 {
 
 .img-menu {
    max-width: 100%;
-   height: calc(100vh - 94.4px);
+   height: calc(100vh - 82.4px);
    object-fit: cover;
 }
 
 .card-menu--padding {
    padding: 0;
+}
+
+.btn-menu-center {
+   bottom: 134px;
+   left: 50%;
+   position: absolute;
+   transform: translateX(-50%);
 }
