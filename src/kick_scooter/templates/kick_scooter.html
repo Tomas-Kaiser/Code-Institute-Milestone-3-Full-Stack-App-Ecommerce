@@ -3,5 +3,37 @@
 {% block head_title %}Kick Scooters{% endblock %}
 
 {% block content %}
-   <p>This is gonna be a page with all products related to kick scooters</p>
+<div class="link">
+   <a href="/">Home</a> > Kick Scooters
+</div>
+<div class="container">
+   <div class="row">
+      {% for product in kick_scooters_products %}
+      <div class="col-md-4 ">
+         <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+               <h5 class="card-title">{{ product.title }}</h5>
+               <ul>
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_1 }}</li>
+                  {% endif %}
+
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_2 }}</li>
+                  {% endif %}
+
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_3 }}</li>
+                  {% endif %}
+               </ul>
+               <p class="card-text">{{ product.content }}</p>
+               <button href="#" class="btn btn-primary">Buy</button>
+               <span class="price">$50</span>
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
 {% endblock %}
