@@ -19,7 +19,7 @@ h2 {
    object-fit: cover;
 }
 
-.card-menu--padding {
+.element-padding--zero {
    padding: 0;
 }
 
@@ -32,4 +32,8 @@ h2 {
 
 .cursor-pointer{
    cursor: pointer;
+ }
+
+ .active {
+    background: #007bff;
  }
