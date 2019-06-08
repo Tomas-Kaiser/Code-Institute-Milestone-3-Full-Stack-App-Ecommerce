@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class KickScooter(models.Model):
    title       = models.CharField(max_length=120)
+   slug        = models.SlugField(unique=True) 
    stock       = models.IntegerField(blank=False)
    feature_1   = models.CharField(max_length=220, null=True, blank=True)
    feature_2   = models.CharField(max_length=220, null=True, blank=True)
