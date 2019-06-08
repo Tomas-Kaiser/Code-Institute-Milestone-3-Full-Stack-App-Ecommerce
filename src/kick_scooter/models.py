@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class KickScooters(models.Model):
+class KickScooter(models.Model):
    title       = models.CharField(max_length=120)
    stock       = models.IntegerField(blank=False)
    feature_1   = models.CharField(max_length=220, null=True, blank=True)
