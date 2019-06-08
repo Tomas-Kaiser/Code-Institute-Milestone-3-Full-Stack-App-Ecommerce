@@ -29,3 +29,7 @@ h2 {
    position: absolute;
    transform: translateX(-50%);
 }
+
+.cursor-pointer{
+   cursor: pointer;
+ }
