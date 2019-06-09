@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 def kick_scooter_page(request):
-   qs = Product.objects.all()
+   qs = Product.objects.filter(slug__icontains='kick-scooter')
    template_name = "kick_scooter.html"
    context = {"kick_scooters_products": qs}
    return render(request, template_name, context)
