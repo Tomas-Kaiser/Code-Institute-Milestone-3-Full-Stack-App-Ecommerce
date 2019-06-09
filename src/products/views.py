@@ -19,12 +19,12 @@ def kick_scooter_detail(request, slug):
 def eScooter_page(request):
    qs = Product.objects.filter(slug__icontains='eScooter')
    template_name = "eScooters.html"
-   context = {"kick_scooters_products": qs}
+   context = {"eScooters_products": qs}
    return render(request, template_name, context)
 
 # Render only eScooters
 def kid_scooter_page(request):
    qs = Product.objects.filter(slug__icontains='kid-scooter')
    template_name = "kid_scooters.html"
-   context = {"kick_scooters_products": qs}
+   context = {"kid_scooters_products": qs}
    return render(request, template_name, context)
