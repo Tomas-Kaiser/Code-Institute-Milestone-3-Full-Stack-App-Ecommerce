@@ -6,6 +6,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', kick_scooter_page, name="kick-scooter"),
-    path('<str:slug>', kick_scooter_detail),
+    path('kick-scooters/', kick_scooter_page, name="kick-scooter"),
+    path('kick-scooters/<str:slug>', kick_scooter_detail),
 ]
