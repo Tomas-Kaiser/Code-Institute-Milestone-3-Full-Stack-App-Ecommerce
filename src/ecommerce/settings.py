@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home',
-    'kick_scooter', # THis should be deleted
-    'products'
+    'products',
 ]
 
 MIDDLEWARE = [
