@@ -31,9 +31,15 @@ def e_scooter_detail(request, slug):
    return render(request, template_name, context)
 
 
-# Render only eScooters
+# Render only kid scooters
 def kid_scooter_page(request):
    qs = Product.objects.filter(slug__icontains='kid-scooter')
-   template_name = "kid_scooters.html"
+   template_name = "kid_scooter/kid_scooters.html"
    context = {"kid_scooters_products": qs}
+   return render(request, template_name, context)
+
+def kid_scooter_detail(request, slug):
+   qs = get_object_or_404(Product, slug=slug)
+   template_name = "kid_scooter/kid_scooter_detail.html"
+   context = {"kid_scooter_detail": qs}
    return render(request, template_name, context)

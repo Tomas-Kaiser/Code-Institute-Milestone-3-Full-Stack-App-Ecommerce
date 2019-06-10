@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Kick Scooter Detail{% endblock %}
+
+{% block content %}
+<nav class="container-fluid">
+   <div class="row">
+      <div class="col-md-4 element-padding--zero">
+         <h2 class="text-center bg-secondary text-white">Kick Scooters</h2>
+      </div>
+      <div class="col-md-4 element-padding--zero">
+         <h2 class="text-center bg-secondary text-white">eScooter</h2>
+      </div>
+      <div class="col-md-4 element-padding--zero">
+         <h2 class="text-center text-white active">Scooters for kids</h2>
+      </div>
+   </div>
+</nav>
+
+<div class="link">
+   <a href="/">Home</a> > <a href="{% url 'kid-scooter-products' %}">Kid Scooters</a> > Kid scooter Detail
+</div>
+<div class="container">
+   <div class="row">
+      <h2>{{ kid_scooter_detail.title }}</h2>
+   </div>
+</div>
+{% endblock %}
