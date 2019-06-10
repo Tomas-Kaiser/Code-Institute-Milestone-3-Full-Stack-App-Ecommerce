@@ -22,7 +22,7 @@
 </div>
 <div class="container">
    <div class="row">
-      {% for product in eScooters_products %}
+      {% for product in e_scooters_products %}
       <div class="col-md-4 ">
          <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{% static 'img/eScooter.jpg' %}" alt="Card image cap">
@@ -43,7 +43,7 @@
                </ul>
                <p class="card-text">{{ product.content }}</p>
                <p class="text-center">
-                  <a href="#">Learn more</a>
+                  <a href="{{ product.get_absolute_url }}">Learn more</a>
                </p>
                <button href="#" class="btn btn-primary">Buy</button>
                <span class="price">${{ product.price }}</span>
