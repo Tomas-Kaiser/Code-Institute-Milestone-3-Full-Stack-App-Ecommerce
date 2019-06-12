@@ -9,7 +9,7 @@ def register_page(request):
       form.save()
       return redirect('home')
    context = {
-      "register": True,
+      "registeration_page": True,
       "form": form,
    }
    return render(request, 'register.html', context)
