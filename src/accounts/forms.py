@@ -20,3 +20,14 @@ class UserRegistrationForm(UserCreationForm):
       if qs.exists():
          raise forms.ValidationError("This email already exists!")
       return email
+
+   def clean_password(self):
+      password1 = self.clean_email.get('password1')
+      password2 = self.clean_email.get('password2')
+
+      if not password1 or password2:
+         raise forms.ValidationError("Password must not be empty")
+
+      if password1 != password2:
+         raise forms.ValidationError("Passwords do not match")
+      
