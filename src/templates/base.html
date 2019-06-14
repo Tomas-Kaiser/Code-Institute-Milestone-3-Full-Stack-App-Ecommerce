@@ -18,10 +18,17 @@
 
 <body>
    <div class="navbar navbar-expand-lg navbar-light bg-light">
+      {% if messages %}
+      <div>
+         {% for message in messages %}
+         {{ message }}
+         {% endfor %}
+      </div>
+      {% endif %}
       <h1 class="navbar-brand navbar-brand-center">
          <a class="navbar-brand" href="#">Scooters eShop</a>
       </h1>
-      
+
       <!-- Hamburger Menu -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,19 +41,28 @@
             <li class="nav-item">
                <a class="nav-link" href="#">Cart</a>
             </li>
+            {% if user.is_authenticated %}
+            <div class="nav-item">
+               {{ user.username }}
+            </div>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
             {% if not registeration_page %}
             <li class="nav-item">
                <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
             </li>
             {% endif %}
             <li class="nav-item">
-               <a class="nav-link" href="#">Login</a>
+               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
+            {% endif %}
       </div>
    </div>
 
-      {% block content %}
-      {% endblock%}
+   {% block content %}
+   {% endblock%}
 
    {% include 'js.html' %}
 </body>
