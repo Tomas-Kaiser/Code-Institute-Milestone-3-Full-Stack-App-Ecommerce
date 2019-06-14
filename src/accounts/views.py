@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .forms import UserRegistrationForm, UserLoginForm
 
-# Create your views here.
 
 def register_page(request):
    form = UserRegistrationForm(request.POST or None)
@@ -16,6 +16,7 @@ def register_page(request):
    }
    return render(request, 'register.html', context)
 
+@login_required
 def logout(request):
    """ Log user out """
    auth.logout(request)
@@ -23,7 +24,11 @@ def logout(request):
 
    return redirect('home')
 
+
 def login_page(request):
+   if request.user.is_authenticated:
+      return redirect('home')
+
    form = UserLoginForm(request.POST or None)
    if form.is_valid():
       user = auth.authenticate(username=request.POST['username'],
@@ -32,6 +37,7 @@ def login_page(request):
       if user:
          auth.login(user=user, request=request)
          messages.success(request, "You have successfully logged in!")
+         return redirect('home')
       else:
          form.add_error(None, "Your username or password is incorect")
 
