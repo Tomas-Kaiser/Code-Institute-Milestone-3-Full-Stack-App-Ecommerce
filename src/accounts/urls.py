@@ -7,7 +7,6 @@ from .views import (
 
 urlpatterns = [
    path('register/', register_page, name="register"),
-   # path('login/',),
    path('login/', login_page, name="login"),
    path('logout/', logout, name="logout"),
 ]

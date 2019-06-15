@@ -6,10 +6,23 @@ from .forms import UserRegistrationForm, UserLoginForm
 
 
 def register_page(request):
+   if request.user.is_authenticated:
+      return redirect('home')
+
    form = UserRegistrationForm(request.POST or None)
    if form.is_valid():
       form.save()
-      return redirect('home')
+
+      user = auth.authenticate(username=request.POST['username'],
+                               password=request.POST['password1'])
+
+      if user:
+         auth.login(user=user, request=request)
+         messages.success(request, "You have successfully been registered & logged in!")
+         return redirect('home')
+      else:
+         messages.error(request, "Unable to register your account at this time")
+
    context = {
       "registeration_page": True,
       "form": form,
@@ -36,7 +49,7 @@ def login_page(request):
          
       if user:
          auth.login(user=user, request=request)
-         messages.success(request, "You have successfully logged in!")
+         messages.success(request, "You have successfully been logged in!")
          return redirect('home')
       else:
          form.add_error(None, "Your username or password is incorect")
