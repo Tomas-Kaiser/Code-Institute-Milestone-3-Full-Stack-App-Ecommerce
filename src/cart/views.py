@@ -24,7 +24,7 @@ def add_to_cart(request, id):
 
    request.session['cart'] = cart
 
-   return redirect('home')
+   return redirect(request.META['HTTP_REFERER'])
 
 
 def edit_cart(request, id):
@@ -40,6 +40,6 @@ def edit_cart(request, id):
       cart.pop(id)
 
    request.session['cart'] = cart
-   
+
    return redirect('cart')
 
