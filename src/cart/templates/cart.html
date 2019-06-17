@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Kick Scooters{% endblock %}
+
+{% block content %}
+
+<div class="link">
+   <a href="/">Home</a> > Shipping Cart
+</div>
+
+<h2>Shopping Cart</h2>
+
+<div class="container-fluid">
+   <hr>
+   <div class="row">
+      <div class="col-md-6">
+         <h5>Items in your cart</h5>
+         {% for item in cart_items %}
+         <h6>{{ item.product.title }}</h6>
+         {% endfor %}
+      </div>
+      <div class="col-md-2">
+         <h5>Item price</h5>
+         {% for item in cart_items %}
+         <h6>{{ item.product.price }}</h6>
+         {% endfor %}
+      </div>
+      <div class="col-md-2">
+         <h5>Quantity</h5>
+         {% for item in cart_items %}
+         <h6>{{ item.quantity }}</h6>
+         {% endfor %}
+      </div>
+      <div class="col-md-2">
+         <h5>Total Price</h5>
+         {% for item in cart_items %}
+         <h6>{{ item.total_product_price }}</h6>
+         {% endfor %}
+      </div>
+   </div>
+   <hr>
+   <div class="row">
+      <div class="col-md-2 offset-md-8">
+         <h5>{{ product_count }}</h5>
+      </div>
+      <div class="col-md-2">
+            <h5>{{ total }}</h5>
+         </div>
+   </div>
+</div>
+
+{% endblock %}
