@@ -37,7 +37,7 @@ def edit_cart(request, id):
    if quantity > 0:
       cart[id] = quantity
    else:
-      cart.pop(id)
+      cart.pop(str(id))
 
    request.session['cart'] = cart
 

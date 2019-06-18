@@ -42,9 +42,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-               <a class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i>
+               <a class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart" aria-hidden="true"></i>
                   {% if product_count > 0 %}
-                  <span class="badge badge-warning">{{ product_count }}</span>
+                  <span class="badge badge-warning" >{{ product_count }}</span>
                   {% endif %}
                </a>
             </li>
