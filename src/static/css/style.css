@@ -37,3 +37,9 @@ h2 {
  .active {
     background: #007bff;
  }
+
+ .badge {
+    font-size: 60%;
+    position: relative;
+    bottom: 10px;
+ }
