@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'products',
     'accounts',
     'cart',
+    'checkout'
 ]
 
 MIDDLEWARE = [
@@ -133,5 +134,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-STRIPE_PUBLISHABLE = os.environ('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.environ('STRIPE_SECRET')
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
