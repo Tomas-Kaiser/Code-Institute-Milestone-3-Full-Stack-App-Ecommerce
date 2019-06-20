@@ -11,6 +11,8 @@ from .models import OrderLineItem
 stripe.api_key = settings.STRIPE_SECRET
 
 def checkout(request):
+   print("THis is request.POST ")
+   print(request.POST)
    order_form = OrderForm(request.POST or None)
    payment_form = PaymentForm(request.POST or None)
 

@@ -23,14 +23,14 @@
 <h2>Total</h2>
 <p>{{ total }}</p>
 
-<form action="{% url 'checkout' %}" method="post">
+<form action="{% url 'checkout' %}" id="payment-form" method="POST">{% csrf_token %}
    <legend>Payment Details</legend>
    {{ order_form.as_p }}
 
    <hr>
    {{ payment_form.as_p }}
 
-   <input class="btn btn-primary" type="button" value="Submit Payment">
+   <button class="btn btn-primary" type="button">Submit Payment</button>
 
 </form>
 
