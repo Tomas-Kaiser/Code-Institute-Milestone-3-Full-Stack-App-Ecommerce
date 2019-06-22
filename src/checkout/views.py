@@ -11,15 +11,19 @@ from .models import OrderLineItem
 stripe.api_key = settings.STRIPE_SECRET
 
 def checkout(request):
-   print("THis is request.POST ")
-   print(request.POST)
+   
    order_form = OrderForm(request.POST or None)
    payment_form = PaymentForm(request.POST or None)
 
+
+   print("Valid order_from? ", order_form.is_valid())
+   print("Valid payment_form", payment_form.is_valid())
    if order_form.is_valid() and payment_form.is_valid():
       order = order_form.save(commit=False)
       order.date = timezone.now()
       order.save()
+
+      print("Are we going here?")
 
       cart = request.session.get('cart', {})
       total = 0
@@ -49,10 +53,10 @@ def checkout(request):
          return redirect('home')
       else:
          messages.error(request, "Unable o take payment")
-   else:
-      print(payment_form.errors)
-      messages.error(request, "We were unable to take a payment with that card!")
-
+   # else:
+   #    print(payment_form.errors)
+   #    messages.error(request, "We were unable to take a payment with that card!")
+      
    context = {
       'order_form': order_form,
       'payment_form': payment_form,
