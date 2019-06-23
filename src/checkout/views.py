@@ -37,15 +37,26 @@ def checkout(request):
          )
          order_line_item.save()
 
-      try:
-         customer = stripe.Charge.create(
-            amount = int(total * 100),
-            currency = "EUR",
-            description = request.user.email,
-            card = payment_form.cleaned_data['stripe_id']
-         )
-      except stripe.error.CardError:
-         messages.error(request, "Your card was declined")
+      if request.user.is_authenticated:
+         try:
+            customer = stripe.Charge.create(
+               amount = int(total * 100),
+               currency = "EUR",
+               description = request.user.email,
+               card = payment_form.cleaned_data['stripe_id']
+            )
+         except stripe.error.CardError:
+            messages.error(request, "Your card was declined")
+      else:
+         try:
+            customer = stripe.Charge.create(
+               amount = int(total * 100),
+               currency = "EUR",
+               card = payment_form.cleaned_data['stripe_id']
+            )
+         except stripe.error.CardError:
+            messages.error(request, "Your card was declined")
+     
 
       if customer.paid:
          messages.error(request, "You have successfully paid")
