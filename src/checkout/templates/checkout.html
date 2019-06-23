@@ -33,9 +33,9 @@
 <form role="form" action="{% url 'checkout' %}" id="payment-form" method="POST">{% csrf_token %}
    <legend>Payment Details</legend>
 
-   <div id="credit-card-errors" style="display: none;">
-      <div id="alert-message block-message error" id="stripe-error-message"></div>
-  </div>
+   <div id="credit-card-errors">
+      <div class="alert-message block-message error" id="stripe-error-message"></div>
+   </div>
 
    {{ order_form.as_p }}
 
@@ -47,5 +47,6 @@
 
 </form>
 
+<div class="zk" id="zk-id"></div>
 
 {% endblock %}
