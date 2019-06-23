@@ -2,7 +2,7 @@ $(function() {
     console.log("STRIPE JS IS LOADED")
     $("#payment-form").submit(function(e) {
         console.log("Submit button is clicked")
-        e.preventDefault();
+        //e.preventDefault();
         var form = this;
         var card = {
             number: $("#id_credit_card_number").val(),
