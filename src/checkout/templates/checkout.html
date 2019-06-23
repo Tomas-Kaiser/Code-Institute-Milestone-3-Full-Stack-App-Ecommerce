@@ -17,6 +17,10 @@
 
 {% block content %}
 
+<div class="link">
+   <a href="/">Home</a> > <a href="{% url 'cart' %}">Shipping Cart</a> > Checkout
+</div>
+
 {% for item in cart_items %}
    <h2>{{ item.product.title }}</h2>
    <p>Qty: {{ item.quantity }}</p>
