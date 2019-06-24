@@ -2,20 +2,39 @@
 
 {% block head_title %}Login{% endblock %}
 
-{% block content %}
-   <h2>Login</h2>
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{% endblock %}
 
-   {% if messages %}
-   <div>
-      {% for message in messages %}
+{% block content %}
+<h2 class="text-center">Login</h2>
+
+<div class="container mt-2">
+   <div class="row justify-content-center">
+
+      {% if messages %}
+      <div>
+         {% for message in messages %}
          {{ message }}
-      {% endfor %}
+         {% endfor %}
+      </div>
+      {% endif %}
+
+      <form method="POST"> {% csrf_token %}
+
+         {% for field in form %}
+         <div class="field">
+            <label for="{{ field.id_or_label }}" class="label">{{ field.html_name }}:</label>
+            {{  field }}
+         </div>
+         {% endfor %}
+
+         <div class="text-center">
+            <button class="text-center btn btn-primary" type="submit">Login</button>
+         </div>
+      </form>
    </div>
-   {% endif %}
-   
-   <form method="POST"> {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Login</button>
-   </form>
+
+</div>
 
 {% endblock %}
