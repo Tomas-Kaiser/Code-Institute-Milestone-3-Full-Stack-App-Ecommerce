@@ -1,14 +1,10 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}Login{% endblock %}
 
-{% block head_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
-{% endblock %}
-
 {% block content %}
-<h2 class="text-center">Login</h2>
-
 <div class="container mt-2">
    <div class="row justify-content-center">
 
@@ -21,20 +17,15 @@
       {% endif %}
 
       <form method="POST"> {% csrf_token %}
+         <legend class="text-center">LOGIN</legend>
 
-         {% for field in form %}
-         <div class="field">
-            <label for="{{ field.id_or_label }}" class="label">{{ field.html_name }}:</label>
-            {{  field }}
-         </div>
-         {% endfor %}
+            {{ form | crispy }}
 
          <div class="text-center">
             <button class="text-center btn btn-primary" type="submit">Login</button>
          </div>
       </form>
    </div>
-
 </div>
 
 {% endblock %}
