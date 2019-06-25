@@ -43,3 +43,12 @@ h2 {
     position: relative;
     bottom: 10px;
  }
+
+ .veiw-height {
+    height: calc(100vh - 56px);
+ }
+
+.form-relative {
+   position: relative;
+   top: 12vh;
+}
