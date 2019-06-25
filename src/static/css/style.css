@@ -1,7 +1,13 @@
+/*** SELECTORS ***/
+
 h2 {
    margin: 0;
    font-size: 1.4rem;
 }
+
+
+
+/*** NAV BAR ***/
 
 .navbar-brand {
    font-size: 1.8rem;
@@ -13,6 +19,9 @@ h2 {
    transform: translateX(-50%);
 }
 
+
+
+/*** MENU - landing page***/
 .img-menu {
    max-width: 100%;
    height: calc(100vh - 82.4px);
@@ -58,8 +67,15 @@ h2 {
    top: 12vh;
 }
 
+
+
+/*** BACKGROUND IMG ***/
+
 .bg-login { 
    background: url(../img/bg_login.jpg) no-repeat center center fixed; 
+ }
+
+ .full-width-bg-img {
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
