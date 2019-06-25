@@ -5,26 +5,28 @@
 {% block head_title %}Login{% endblock %}
 
 {% block content %}
-<div class="container form-relative">
-   <div class="row justify-content-center">
+<div class="bg-login veiw-height">
+   <div class="container form-relative">
+      <div class="row justify-content-center">
 
-      {% if messages %}
-      <div>
-         {% for message in messages %}
-         {{ message }}
-         {% endfor %}
-      </div>
-      {% endif %}
+         {% if messages %}
+         <div>
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+         </div>
+         {% endif %}
 
-      <form method="POST"> {% csrf_token %}
-         <legend class="text-center">LOGIN</legend>
+         <form method="POST" class="form-border p-5"> {% csrf_token %}
+            <legend class="text-center text-white">LOGIN</legend>
 
             {{ form | crispy }}
 
-         <div class="text-center">
-            <button class="text-center btn btn-primary" type="submit">Login</button>
-         </div>
-      </form>
+            <div class="text-center">
+               <button class="text-center btn btn-primary" type="submit">Login</button>
+            </div>
+         </form>
+      </div>
    </div>
 </div>
 

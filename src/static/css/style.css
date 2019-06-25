@@ -48,7 +48,20 @@ h2 {
     height: calc(100vh - 56px);
  }
 
-.form-relative {
+ .form-border {
+   border: 2px solid white;
+   border-radius: 42px;
+ }
+
+ .form-relative {
    position: relative;
    top: 12vh;
 }
+
+.bg-login { 
+   background: url(../img/bg_login.jpg) no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
