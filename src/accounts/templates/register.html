@@ -6,15 +6,17 @@
 
 {% block content %}
 
-<div class="container mt-2">
-   <div class="row justify-content-center">
-      <form method="POST"> {% csrf_token %}
-         <legend>Create an account</legend>
-         {{ form | crispy }}
-         <div class="text-center">
-            <button class="text-center btn btn-primary" type="submit">Register</button>
-         </div>
-      </form>
+<div class="bg-register full-width-bg-img">
+   <div class="container">
+      <div class="row justify-content-center">
+         <form method="POST" class="form-border p-5 mt-4"> {% csrf_token %}
+            <legend class="text-white">Create an account</legend>
+            {{ form | crispy }}
+            <div class="text-center">
+               <button class="text-center btn btn-primary" type="submit">Register</button>
+            </div>
+         </form>
+      </div>
    </div>
 </div>
 {% endblock %}

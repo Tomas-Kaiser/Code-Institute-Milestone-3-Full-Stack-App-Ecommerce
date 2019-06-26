@@ -67,12 +67,20 @@ h2 {
    top: 12vh;
 }
 
+.col-form-label {
+   color: white;
+}
+
 
 
 /*** BACKGROUND IMG ***/
 
 .bg-login { 
    background: url(../img/bg_login.jpg) no-repeat center center fixed; 
+ }
+
+ .bg-register { 
+   background: url(../img/bg_register.jpg) no-repeat center center fixed; 
  }
 
  .full-width-bg-img {
