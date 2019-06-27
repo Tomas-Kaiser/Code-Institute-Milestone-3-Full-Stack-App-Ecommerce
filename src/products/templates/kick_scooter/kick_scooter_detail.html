@@ -20,9 +20,10 @@
 <div class="link">
    <a href="/">Home</a> > <a href="{% url 'kick-scooter-products' %}">Kick Scooters</a> > Kick Scooter Detail
 </div>
-<div class="container">
+<div class="fluid-container">
    <div class="row">
       <h2>{{ kick_scooter_detail.title }}</h2>
+      <p>{{ kick_scooter_detail.slug }}</p>
    </div>
 </div>
 {% endblock %}
