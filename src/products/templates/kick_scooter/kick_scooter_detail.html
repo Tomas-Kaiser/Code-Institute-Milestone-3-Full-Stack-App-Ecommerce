@@ -20,10 +20,64 @@
 <div class="link">
    <a href="/">Home</a> > <a href="{% url 'kick-scooter-products' %}">Kick Scooters</a> > Kick Scooter Detail
 </div>
-<div class="fluid-container">
+<div class="container">
    <div class="row">
-      <h2>{{ kick_scooter_detail.title }}</h2>
-      <p>{{ kick_scooter_detail.slug }}</p>
+      <div class="col-md-6">
+         <h2>{{ kick_scooter_detail.title }}</h2>
+         <p>{{ kick_scooter_detail.slug }}</p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6">
+         <img class="card-img-top" src="{% static 'img/kick_scooter.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="col-md-6">
+         <form method="post" action="{% url 'add-to-cart' kick_scooter_detail.id %}">
+            {% csrf_token %}
+            <div class="input-group">
+               <input name="quantity" type="number" min="1" max="999" class="form-control" value="1" hidden>
+               <div class="card-price">
+                  <span class="price">${{ kick_scooter_detail.price }}</span>
+                  <span class="input-group-btn float-right">
+                     <button class="btn btn-success" type="submit">Add to cart</button>
+                  </span>
+               </div>
+            </div>
+         </form>
+
+         {% if kick_scooter_detail.stock > 5 %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-success font-weight-bold">In stock > {{ kick_scooter_detail.stock}} pcs</span>
+         </div>
+         {% elif kick_scooter_detail.stock <= 5 and kick_scooter_detail.stock > 0 %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-success font-weight-bold">In stock: {{ kick_scooter_detail.stock}} pcs</span>
+         </div>
+         {% else %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-danger font-weight-bold">Run of stock</span>
+         </div>
+         {% endif %}
+
+         <hr>
+
+         <h5>Features</h5>
+
+         <ul>
+            {% if kick_scooter_detail.feature_1 != None %}
+            <li>{{ kick_scooter_detail.feature_1 }}</li>
+            {% endif %}
+
+            {% if kick_scooter_detail.feature_1 != None %}
+            <li>{{ kick_scooter_detail.feature_2 }}</li>
+            {% endif %}
+
+            {% if kick_scooter_detail.feature_1 != None %}
+            <li>{{ kick_scooter_detail.feature_3 }}</li>
+            {% endif %}
+         </ul>
+         <p class="card-text">{{ kick_scooter_detail.content }}</p>
+      </div>
    </div>
 </div>
 {% endblock %}
