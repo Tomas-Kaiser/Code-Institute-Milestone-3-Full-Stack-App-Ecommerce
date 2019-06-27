@@ -34,15 +34,15 @@
                </a>
                <ul>
                   {% if product.feature_1 != None %}
-                  <li>{{ product.feature_1 }}</li>
+                  <li>{{ product.feature_1|truncatewords:5 }}</li>
                   {% endif %}
 
                   {% if product.feature_1 != None %}
-                  <li>{{ product.feature_2 }}</li>
+                  <li>{{ product.feature_2|truncatewords:5 }}</li>
                   {% endif %}
 
                   {% if product.feature_1 != None %}
-                  <li>{{ product.feature_3 }}</li>
+                  <li>{{ product.feature_3|truncatewords:5 }}</li>
                   {% endif %}
                </ul>
                <p class="card-text">{{ product.content|truncatewords:10 }}</p>
@@ -64,13 +64,9 @@
                <div class="card-stock mt-2 text-center">
                   <span class="text-success font-weight-bold">In stock > {{ product.stock}} pcs</span>
                </div>
-               {% elif product.stock <= 5 and product.stock > 1 %}
+               {% elif product.stock <= 5 and product.stock > 0 %}
                <div class="card-stock mt-2 text-center">
                   <span class="text-success font-weight-bold">In stock: {{ product.stock}} pcs</span>
-               </div>
-               {% elif product.stock == 1 %}
-               <div class="card-stock mt-2 text-center">
-                  <span class="text-success font-weight-bold">In stock: {{ product.stock}} pc</span>
                </div>
                {% else %}
                <div class="card-stock mt-2 text-center">
