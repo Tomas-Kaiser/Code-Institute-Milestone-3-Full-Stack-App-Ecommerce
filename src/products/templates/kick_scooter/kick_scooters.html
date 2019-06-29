@@ -4,18 +4,24 @@
 
 {% block content %}
 <nav class="container-fluid">
-   <div class="row">
-      <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center text-white active">Kick Scooters</h2>
+      <div class="row">
+         <div class="col-md-4 element-padding--zero">
+            <a href="{% url 'kick-scooter-products' %}">
+               <h2 class="text-center text-white active">Kick Scooters</h2>
+            </a>
+         </div>
+         <div class="col-md-4 element-padding--zero">
+            <a href="{% url 'e-scooter-products' %}">
+               <h2 class="text-center bg-secondary text-white">eScooters</h2>
+            </a>
+         </div>
+         <div class="col-md-4 element-padding--zero">
+            <a href="{% url 'kid-scooter-products' %}">
+               <h2 class="text-center bg-secondary text-white">Scooters for kids</h2>
+            </a>
+         </div>
       </div>
-      <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center bg-secondary text-white">eScooters</h2>
-      </div>
-      <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center bg-secondary text-white">Scooters for kids</h2>
-      </div>
-   </div>
-</nav>
+   </nav>
 
 <div class="link">
    <a href="/">Home</a> > Kick Scooters
