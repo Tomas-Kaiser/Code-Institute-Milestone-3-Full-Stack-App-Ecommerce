@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block head_title %}Kick Scooter Detail{% endblock %}
+{% block head_title %}eScooter Detail{% endblock %}
 
 {% block content %}
 <nav class="container-fluid">
@@ -22,7 +22,62 @@
 </div>
 <div class="container">
    <div class="row">
-      <h2>{{ e_scooter_detail.title }}</h2>
+      <div class="col-md-6">
+         <h2>{{ e_scooter_detail.title }}</h2>
+         <p>{{ e_scooter_detail.slug }}</p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6">
+         <img class="card-img-top" src="{% static 'img/kick_scooter.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="col-md-6">
+         <form method="post" action="{% url 'add-to-cart' e_scooter_detail.id %}">
+            {% csrf_token %}
+            <div class="input-group">
+               <input name="quantity" type="number" min="1" max="999" class="form-control" value="1" hidden>
+               <div class="card-price">
+                  <span class="price">${{ e_scooter_detail.price }}</span>
+                  <span class="input-group-btn float-right">
+                     <button class="btn btn-success" type="submit">Add to cart</button>
+                  </span>
+               </div>
+            </div>
+         </form>
+
+         {% if e_scooter_detail.stock > 5 %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-success font-weight-bold">In stock > {{ e_scooter_detail.stock}} pcs</span>
+         </div>
+         {% elif e_scooter_detail.stock <= 5 and e_scooter_detail.stock > 0 %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-success font-weight-bold">In stock: {{ e_scooter_detail.stock}} pcs</span>
+         </div>
+         {% else %}
+         <div class="card-stock mt-2 text-right">
+            <span class="text-danger font-weight-bold">Run of stock</span>
+         </div>
+         {% endif %}
+
+         <hr>
+
+         <h5>Features</h5>
+
+         <ul>
+            {% if e_scooter_detail.feature_1 != None %}
+            <li>{{ e_scooter_detail.feature_1 }}</li>
+            {% endif %}
+
+            {% if e_scooter_detail.feature_1 != None %}
+            <li>{{ e_scooter_detail.feature_2 }}</li>
+            {% endif %}
+
+            {% if e_scooter_detail.feature_1 != None %}
+            <li>{{ e_scooter_detail.feature_3 }}</li>
+            {% endif %}
+         </ul>
+         <p class="card-text">{{ e_scooter_detail.content }}</p>
+      </div>
    </div>
 </div>
 {% endblock %}
