@@ -38,7 +38,7 @@
    </div>
    <div class="row">
       <div class="col-md-6">
-         <img class="card-img-top" src="{% static 'img/kick_scooter.jpg' %}" alt="Card image cap">
+         <img class="card-img-top" src="{{ MEDIA_URL }}{{ e_scooter_detail.image }}" alt="Card image cap">
       </div>
       <div class="col-md-6">
          <form method="post" action="{% url 'add-to-cart' e_scooter_detail.id %}">
