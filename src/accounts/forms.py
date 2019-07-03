@@ -32,10 +32,3 @@ class UserRegistrationForm(UserCreationForm):
          raise forms.ValidationError("Passwords do not match")
 
       return password2
-
-
-class UserLoginForm(forms.Form):
-   """ Form o be used to log user in """
-
-   username = forms.CharField()
-   password = forms.CharField(widget=forms.PasswordInput)

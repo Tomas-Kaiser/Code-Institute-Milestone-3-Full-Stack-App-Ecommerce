@@ -165,3 +165,8 @@ MEDIA_URL = "https://" + AWS_S3_CUSTOM_DOMAIN + '/media/' # Is this correct way?
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
