@@ -10,6 +10,8 @@
    <h2>Welcome to your profile page, {{ profile.username }}!</h2>
    <p>Email: {{ profile.email }}</p>
    <p>Username: {{ profile.username }}</p>
+   <a href="{% url 'password_change' %}">Change password</a>
    <a href="{% url 'home' %}">Go back to home page</a>
+
 </body>
 </html>

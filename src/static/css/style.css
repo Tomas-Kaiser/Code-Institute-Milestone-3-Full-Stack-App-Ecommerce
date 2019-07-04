@@ -43,28 +43,37 @@ h2 {
 
 .cursor-pointer{
    cursor: pointer;
- }
+}
 
- .active {
-    background: #007bff;
- }
+.active {
+   background: #007bff;
+}
 
- .badge {
-    font-size: 60%;
-    position: relative;
-    bottom: 10px;
- }
+.badge {
+   font-size: 60%;
+   position: relative;
+   bottom: 10px;
+}
 
- .veiw-height {
-    height: calc(100vh - 56px);
- }
+.veiw-height {
+   height: calc(100vh - 56px);
+}
 
- .form-border {
+
+/*** Form ***/
+.asteriskField {
+   color: yellowgreen !important;
+   display: none !important;
+}
+
+
+.form-border {
    border: 2px solid white;
    border-radius: 42px;
- }
+}
 
- .form-relative {
+
+.form-relative {
    position: relative;
    top: 12vh;
 }
