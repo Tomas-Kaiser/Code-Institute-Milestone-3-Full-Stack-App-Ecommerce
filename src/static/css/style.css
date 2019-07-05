@@ -70,6 +70,15 @@ h2 {
    color: wheat !important;
 }
 
+form .alert ul{
+   margin: 0;
+   padding: 0;
+}
+
+form .alert ul li {
+   list-style: none;
+}
+
 
 .form-border {
    border: 2px solid white;
