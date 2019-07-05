@@ -66,6 +66,10 @@ h2 {
    display: none !important;
 }
 
+#hint_id_new_password1 {
+   color: wheat !important;
+}
+
 
 .form-border {
    border: 2px solid white;
