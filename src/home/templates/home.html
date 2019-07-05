@@ -8,17 +8,17 @@
    <div class="row">
       <div class="col-md-4 element-padding--zero">
          <h2 class="text-center bg-secondary text-white">Kick Scooters</h2>
-         <img class="img-menu" src="{% static 'img/kick_scooter.jpg' %}" alt="Kick scooter">
+         <img class="img-menu" src="{{ MEDIA_URL }}images/kick_scooter.jpg" alt="Kick scooter">
          <a href="{% url 'kick-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">Kick Scooters</a>
       </div>
       <div class="col-md-4 element-padding--zero">
          <h2 class="text-center bg-secondary text-white">eScooters</h2>
-         <img class="img-menu" src="{% static 'img/eScooter.jpg' %}" alt="Eletric scooter">
+         <img class="img-menu" src="{{ MEDIA_URL }}images/eScooter.jpg" alt="Eletric scooter">
          <a href="{% url 'e-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">eScooters</a>
       </div>
       <div class="col-md-4 element-padding--zero">
          <h2 class="text-center bg-secondary text-white">Scooters for kids</h2>
-         <img class="img-menu" src="{% static 'img/kid_scooter.jpg' %}" alt="Scooter for kids">
+         <img class="img-menu" src="{{ MEDIA_URL }}images/kid_scooter.jpg" alt="Scooter for kids">
          <a href="{% url 'kid-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">Scooters for kids</a>
       </div>
    </div>
