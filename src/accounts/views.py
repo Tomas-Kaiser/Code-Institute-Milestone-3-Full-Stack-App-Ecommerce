@@ -29,12 +29,14 @@ def register_page(request):
    }
    return render(request, 'register.html', context)
 
+
 @login_required
 def profile(request):
    """ The user's profile page """
    user = User.objects.get(email=request.user.email)
    context = {"profile": user}
    return render(request, 'profile.html', context)
+
 
 def login_page(request):
    if request.user.is_authenticated:
@@ -53,3 +55,12 @@ def login_page(request):
          form.add_error(None, "Your username or password is incorect")
 
    return render(request, 'login.html', {"form": form})
+
+
+@login_required
+def logout(request):
+   """ Log user out """
+   auth.logout(request)
+   messages.success(request, 'You have successfully logged out')
+
+   return redirect('home')
