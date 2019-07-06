@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserLoginForm
 
 
 def register_page(request):
@@ -36,3 +36,20 @@ def profile(request):
    context = {"profile": user}
    return render(request, 'profile.html', context)
 
+def login_page(request):
+   if request.user.is_authenticated:
+      return redirect('home')
+
+   form = UserLoginForm(request.POST or None)
+   if form.is_valid():
+      user = auth.authenticate(username=request.POST['username'],
+                               password=request.POST['password'])
+         
+      if user:
+         auth.login(user=user, request=request)
+         messages.success(request, "You have successfully been logged in!")
+         return redirect('home')
+      else:
+         form.add_error(None, "Your username or password is incorect")
+
+   return render(request, 'login.html', {"form": form})
