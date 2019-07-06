@@ -9,14 +9,6 @@
    <div class="container form-relative">
       <div class="row justify-content-center">
 
-         {% if messages %}
-         <div>
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-         </div>
-         {% endif %}
-
          <form method="POST" class="form-border p-5"> {% csrf_token %}
             <legend class="text-center text-white">LOGIN</legend>
 
@@ -29,6 +21,7 @@
                <a href="{% url 'password_reset' %}">Forgot your password?</a>
             </div>
          </form>
+         
       </div>
    </div>
 </div>
