@@ -33,7 +33,6 @@ class UserRegistrationForm(UserCreationForm):
 
       return password2
 
-
 class UserLoginForm(forms.Form):
    """ Form o be used to log user in """
 

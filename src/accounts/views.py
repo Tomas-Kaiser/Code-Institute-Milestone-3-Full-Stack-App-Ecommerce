@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
 from .forms import UserRegistrationForm, UserLoginForm
 
 
@@ -29,14 +28,6 @@ def register_page(request):
       "form": form,
    }
    return render(request, 'register.html', context)
-
-@login_required
-def logout(request):
-   """ Log user out """
-   auth.logout(request)
-   messages.success(request, 'You have successfully logged out')
-
-   return redirect('home')
 
 
 @login_required
@@ -65,3 +56,11 @@ def login_page(request):
 
    return render(request, 'login.html', {"form": form})
 
+
+@login_required
+def logout(request):
+   """ Log user out """
+   auth.logout(request)
+   messages.success(request, 'You have successfully logged out')
+
+   return redirect('home')
