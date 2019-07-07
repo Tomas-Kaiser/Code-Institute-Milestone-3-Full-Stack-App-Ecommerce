@@ -61,6 +61,6 @@ def login_page(request):
 def logout(request):
    """ Log user out """
    auth.logout(request)
-   messages.success(request, 'You have successfully logged out')
+   messages.success(request, 'You have successfully logged out!')
 
    return redirect('home')

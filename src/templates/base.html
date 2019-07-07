@@ -23,14 +23,6 @@
 
 <body>
    <div class="navbar navbar-expand-lg navbar-light bg-light">
-      {% if messages %}
-      <div>
-         {% for message in messages %}
-         {{ message }}
-         {% endfor %}
-      </div>
-      {% endif %}
-
       <h1 class="navbar-brand navbar-brand-center">
          <a class="navbar-brand" href="/">Scooters eShop</a>
       </h1>
@@ -47,7 +39,7 @@
             <li class="nav-item">
                <a class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart" aria-hidden="true"></i>
                   {% if product_count > 0 %}
-                  <span class="badge badge-warning" >{{ product_count }}</span>
+                  <span class="badge badge-warning">{{ product_count }}</span>
                   {% endif %}
                </a>
             </li>
@@ -76,7 +68,35 @@
    {% block content %}
    {% endblock%}
 
+
+   {% if messages %}
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalMsg" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+               {% for message in messages %}
+               {{ message }}
+               {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- /Modal -->
+   {% endif %}
+
    {% include 'js.html' %}
+   <script src="{% static 'js/modal.js' %}"></script>
    {% block stripe_js%}
    {% endblock stripe_js%}
 </body>
