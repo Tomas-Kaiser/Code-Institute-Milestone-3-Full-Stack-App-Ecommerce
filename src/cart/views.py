@@ -13,18 +13,21 @@ def add_to_cart(request, id):
    """
    Add a quantity of the specified product to the cart
    """
-   quantity = int(request.POST['quantity'])
+   if request.method == 'POST':
+      quantity = int(request.POST['quantity'])
 
-   cart = request.session.get('cart', {})
- 
-   if id in cart:
-      cart[id] = int(cart[id]) + quantity      
-   else:
-      cart[id] = cart.get(id, quantity) 
+      cart = request.session.get('cart', {})
 
-   request.session['cart'] = cart
+      string_id = str(id)
 
-   return redirect(request.META['HTTP_REFERER'])
+      if string_id in cart:
+         cart[string_id] = int(cart[string_id]) + quantity  
+      else:
+         cart[id] = cart.get(id, quantity)
+
+      request.session['cart'] = cart
+
+      return redirect(request.META['HTTP_REFERER'])
 
 
 def edit_cart(request, id):
