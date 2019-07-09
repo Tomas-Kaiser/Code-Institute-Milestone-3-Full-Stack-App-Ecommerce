@@ -37,7 +37,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-               <a id="cart" class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart" aria-hidden="true"></i>
+               <a id="cart" class="nav-link" href="{% url 'cart' %}"><i class="fas fa-shopping-cart"
+                     aria-hidden="true"></i>
                   {% if product_count > 0 %}
                   <span class="badge badge-warning">{{ product_count }}</span>
                   {% endif %}
@@ -97,29 +98,29 @@
 
    {% include 'js.html' %}
    <script src="{% static 'js/modal.js' %}"></script>
-   <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
 
    <script>
       $(function () {
-         $('#addProductBtn').on('click', function (e) {
+         $('.addProductBtn').on('click', function (e) {
             let productId = $(this).attr("productId")
             url = '{% url "add-to-cart" 0 %}'.replace('0', productId);
 
             $.ajax({
                type: 'POST',
-               url:  url,
+               url: url,
                data: {
                   productId: productId,
                   quantity: 1,
                   csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
                },
-               success: function(data){
+               success: function (data) {
                   alert("Product has been added into your cart!")
 
-                  if ($('.badge').length === 0){
+                  if ($('.badge').length === 0) {
                      $('#cart').append("<span class='badge badge-warning'>1</span>")
                   } else {
                      let numberItems = $('.badge').text()
@@ -133,6 +134,7 @@
          });
       });
    </script>
+
 
    {% block stripe_js%}
    {% endblock stripe_js%}
