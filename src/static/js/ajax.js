@@ -1,8 +1,7 @@
-/*
 $(function () {
-   $('#addProductBtn').on('click', function (e) {
+   $('.addProductBtn').on('click', function (e) {
       let productId = $(this).attr("productId")
-      url = '{% url "add-to-cart" 0 %}'.replace('0', productId);
+      url = url.replace('0', productId)
 
       $.ajax({
          type: 'POST',
@@ -28,4 +27,3 @@ $(function () {
       e.preventDefault();
    });
 });
-*/

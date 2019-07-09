@@ -98,43 +98,17 @@
 
    {% include 'js.html' %}
    <script src="{% static 'js/modal.js' %}"></script>
+
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-
+   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
    <script>
-      $(function () {
-         $('.addProductBtn').on('click', function (e) {
-            let productId = $(this).attr("productId")
-            url = '{% url "add-to-cart" 0 %}'.replace('0', productId);
-
-            $.ajax({
-               type: 'POST',
-               url: url,
-               data: {
-                  productId: productId,
-                  quantity: 1,
-                  csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-               },
-               success: function (data) {
-                  alert("Product has been added into your cart!")
-
-                  if ($('.badge').length === 0) {
-                     $('#cart').append("<span class='badge badge-warning'>1</span>")
-                  } else {
-                     let numberItems = $('.badge').text()
-                     numberItems++
-                     $('.badge').text(numberItems)
-                  }
-               }
-            });
-
-            e.preventDefault();
-         });
-      });
+      // Global variable for ajax.js otherwise the url would be wrong in the file
+      url = '{% url "add-to-cart" 0 %}';
    </script>
 
+
+   <script src="{% static 'js/ajax.js' %}"></script>
 
    {% block stripe_js%}
    {% endblock stripe_js%}

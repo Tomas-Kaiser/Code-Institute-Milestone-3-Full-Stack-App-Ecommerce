@@ -53,7 +53,7 @@
                </ul>
                <p class="card-text">{{ product.content|truncatewords:10 }}</p>
 
-               <form method="post" id="addProduct">
+               <form method="POST">
                   {% csrf_token %}
                   <div class="input-group">
                      <div class="card-price">
