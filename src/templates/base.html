@@ -104,7 +104,7 @@
 
    <script>
       $(function () {
-         $('.btnId').on('click', function (e) {
+         $('#addProductBtn').on('click', function (e) {
             let productId = $(this).attr("productId")
             url = '{% url "add-to-cart" 0 %}'.replace('0', productId);
 

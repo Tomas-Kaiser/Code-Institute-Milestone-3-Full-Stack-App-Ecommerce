@@ -53,14 +53,13 @@
                </ul>
                <p class="card-text">{{ product.content|truncatewords:10 }}</p>
 
-               <form method="post" action="{% url 'add-to-cart' product.id %}">
+               <form method="post">
                   {% csrf_token %}
                   <div class="input-group">
-                     <input name="quantity" type="number" min="1" max="999" class="form-control" value="1" hidden>
                      <div class="card-price">
                         <span class="price">${{ product.price }}</span>
                         <span class="input-group-btn float-right">
-                           <button class="btn btn-success" type="submit">Add to cart</button>
+                           <button id="addProductBtn" class="btn btn-success" price="{{ product.price }}" productId="{{ product.id }}">Add to cart</button>
                         </span>
                      </div>
                   </div>
