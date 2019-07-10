@@ -101,6 +101,12 @@ form .alert ul li {
 
 /*** PRODUCT CARDS ***/
 
+#cart {
+   position: absolute;
+   top: 9px;
+   right: 140px;
+}
+
 .card-price {
    width: 100%;
    line-height: 40px;
