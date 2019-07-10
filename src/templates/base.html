@@ -98,18 +98,8 @@
 
    {% include 'js.html' %}
    <script src="{% static 'js/modal.js' %}"></script>
-
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-   <script>
-      // Global variable for ajax.js otherwise the url would be wrong in the file
-      url = '{% url "add-to-cart" 0 %}';
-   </script>
-
-
-   <script src="{% static 'js/ajax.js' %}"></script>
-
+   {% block ajax_js%}
+   {% endblock ajax_js%}
    {% block stripe_js%}
    {% endblock stripe_js%}
 </body>

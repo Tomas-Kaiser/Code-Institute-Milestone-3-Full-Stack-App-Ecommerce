@@ -85,3 +85,11 @@
    </div>
 </div>
 {% endblock %}
+
+{% block ajax_js%}
+<script>
+   // Global variable for ajax.js otherwise the url would be wrong in the file
+   url = '{% url "add-to-cart" 0 %}';
+</script>
+<script src="{% static 'js/ajax.js' %}"></script>
+{% endblock ajax_js%}

@@ -59,7 +59,8 @@
                      <div class="card-price">
                         <span class="price">${{ product.price }}</span>
                         <span class="input-group-btn float-right">
-                           <button class="btn btn-success addProductBtn" price="{{ product.price }}" productId="{{ product.id }}">Add to cart</button>
+                           <button class="btn btn-success addProductBtn" price="{{ product.price }}"
+                              productId="{{ product.id }}">Add to cart</button>
                         </span>
                      </div>
                   </div>
@@ -85,3 +86,11 @@
    </div>
 </div>
 {% endblock %}
+
+{% block ajax_js%}
+<script>
+   // Global variable for ajax.js otherwise the url would be wrong in the file
+   url = '{% url "add-to-cart" 0 %}';
+</script>
+<script src="{% static 'js/ajax.js' %}"></script>
+{% endblock ajax_js%}
