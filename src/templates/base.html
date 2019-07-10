@@ -102,22 +102,7 @@
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-   <script>
-      $(window).on("scroll", function () {
-         if ($(window).scrollTop() > 38) {
-             $('#cart').css({
-                "position" : "fixed",
-                "top" : "50px",
-                "right" : "30px",
-                "z-index" : "1001",
-                "border" : "1.5px solid green",
-                "border-radius" : "14px",
-               });
-         } else {
-             $('#cart').css({"position" : "absolute", "top" : "9px", "right" : "140px", "border" : "",});
-         }
-     });
-   </script>
+   <script src="{% static 'js/cart.js' %}"></script>
 
    {% block ajax_js%}
    {% endblock ajax_js%}
