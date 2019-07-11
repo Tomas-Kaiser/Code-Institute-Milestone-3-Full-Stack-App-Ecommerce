@@ -12,6 +12,8 @@ $(function () {
             csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
          },
          success: function (data) {
+            alert("Product has been added into your cart!")
+
             if ($('.badge').length === 0) {
                $('#cart').append("<span class='badge badge-warning'>1</span>")
             } else {
