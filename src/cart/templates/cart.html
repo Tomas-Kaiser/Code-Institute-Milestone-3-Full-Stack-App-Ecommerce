@@ -8,18 +8,19 @@
    <a href="/">Home</a> > Shipping Cart
 </div>
 
-<h2>Shopping Cart</h2>
 
-<div class="container-fluid">
+
+<div class="container">
+   <h2>Shopping Cart</h2>
    <hr>
-   <div class="row">
+   <div class="row cart-header">
       <div class="col-md-4">
          <h5>Items in your cart</h5>
       </div>
       <div class="col-md-3">
          <h5>Item price</h5>
       </div>
-      <div class="col-md-3 text-center">
+      <div class="col-md-3">
          <h5>Quantity</h5>
       </div>
       <div class="col-md-2">
@@ -30,19 +31,16 @@
    {% for item in cart_items %}
    <div class="row align-items-center">
       <div class="col-md-4">
-         <h6>{{ item.product.title }}</h6>
+         <h6><span class="cart-body">Item: </span>{{ item.product.title }}</h6>
       </div>
       <div class="col-md-3">
-         <h6>${{ item.product.price }}</h6>
+         <h6><span class="cart-body">Price: </span>${{ item.product.price }}</h6>
       </div>
       <div class="col-md-3">
          <form method="post" action="{% url 'edit-cart' item.id %}">
             {% csrf_token %}
             <div class="input-group mb-3 mt-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">{{ item.quantity }}</span>
-               </div>
-               <input name="quantity" type="number" class="form-control" min="0" max="999" placeholder="Quantity"
+               <input name="quantity" type="number" class="form-control" min="0" max="999" placeholder="{{ item.quantity }}"
                   aria-label="Quantity" aria-describedby="Quantity to be changed">
                <span class="input-group-btn">
                   <button class="btn btn-primary" type="submit"><i class="fas fa-tools" aria-hidden="true"></i>
@@ -53,29 +51,31 @@
          </form>
       </div>
       <div class="col-md-2">
-         <h6>${{ item.total_product_price }}</h6>
+         <h6><span class="cart-body">Total Price: </span>${{ item.total_product_price }}</h6>
       </div>
    </div>
-   {% endfor %}
    <hr>
+   {% endfor %}
 
    <div class="row">
-      <div class="col-md-2 offset-md-5 text-right border-bottom border-dark">
+      <div class="col-4 col-md-2 offset-md-5 text-right border-bottom border-dark">
          <h5>GRAND TOTAL:</h5>
       </div>
-      <div class="col-md-3 text-center border-bottom border-dark">
+      <div class="col-4 col-md-3 text-center border-bottom border-dark">
          <h5>{{ product_count }} item(s)</h5>
       </div>
-      <div class="col-md-2 border-bottom border-dark">
+      <div class="col-4 col-md-2 border-bottom border-dark">
          <h5>${{ total }}</h5>
       </div>
    </div>
-</div>
 
-<div class="row">
-   <div class="col-md-3 offset-md-9">
-      <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to checkout</a>
+   <div class="row">
+      <div class="col-12 col-md-3 offset-md-9 mb-3 text-center">
+         <a href="{% url 'checkout' %}" class="btn btn-success mt-3">Proceed to checkout</a>
+      </div>
    </div>
 </div>
+
+
 
 {% endblock %}

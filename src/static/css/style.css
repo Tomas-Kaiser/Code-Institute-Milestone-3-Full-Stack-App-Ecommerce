@@ -131,6 +131,20 @@ form .alert ul li {
    100%{transform: scale(1)}
 }
 
+.cart-body {
+   font-weight: normal;
+   display: none;
+}
+
+@media only screen and (max-width: 767px) {
+   .cart-header {
+     display: none;
+   }
+   .cart-body {
+      display: inline;
+   }
+ }
+
 /*** BACKGROUND IMG ***/
 
 .bg-login { 
