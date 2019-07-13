@@ -148,6 +148,20 @@ form .alert ul li {
    }
  }
 
+
+
+ /*** Checkout page ***/
+
+ .checkout-form label {
+   color: black;
+} 
+
+.checkout-form .form-group {
+   margin: 0 5px 0 5px;
+} 
+
+
+
 /*** BACKGROUND IMG ***/
 
 .bg-login { 
@@ -164,3 +178,4 @@ form .alert ul li {
    -o-background-size: cover;
    background-size: cover;
  }
+

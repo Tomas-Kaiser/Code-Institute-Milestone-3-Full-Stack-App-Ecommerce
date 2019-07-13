@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}Checkout{% endblock %}
 
 {% block stripe_js%}
@@ -21,32 +23,47 @@
    <a href="/">Home</a> > <a href="{% url 'cart' %}">Shipping Cart</a> > Checkout
 </div>
 
-{% for item in cart_items %}
-   <h2>{{ item.product.title }}</h2>
-   <p>Qty: {{ item.quantity }}</p>
-   <p>${{ item.product.price }}</p>
-{% endfor %}
+<div class="container mt-4">
+   <h2 class="text-center h1 mb-4">Payment</h2>
 
-<h2>Total</h2>
-<p>{{ total }}</p>
+   <h6>Shopping Cart Content</h6>
+   <div class="row">
+      {% for item in cart_items %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 pl-0">
+         <h2 class="mb-1">{{ item.product.title }}</h2>
+         <p class="mb-0">Qty: {{ item.quantity }}</p>
+         <p>Price: ${{ item.product.price }}</p>
+      </div>
+      {% endfor %}
 
-<form role="form" action="{% url 'checkout' %}" id="payment-form" method="POST">{% csrf_token %}
-   <legend>Payment Details</legend>
-
-   <div id="credit-card-errors">
-      <div class="alert-message block-message error" id="stripe-error-message"></div>
    </div>
 
-   {{ order_form.as_p }}
+   <h2 class="mt-4">Pay in Total: <strong style="color:red">${{ total }}</strong></h2>
 
-   <hr>
+   <form role="form" action="{% url 'checkout' %}" id="payment-form" method="POST" class="mt-5">{% csrf_token %}
+      <legend class="text-center">Payment Details</legend>
 
-   {{ payment_form.as_p }}
+      <h6>Shipping and Contact Details</h6>
 
-   <input id="submit_payment_btn" type="submit" class="submit" value="Submit Payment">
+      <div id="credit-card-errors">
+         <div class="alert-message block-message error" id="stripe-error-message"></div>
+      </div>
+      <div class="row checkout-form">
+         {{ order_form | crispy }}
+      </div>
+      <hr>
 
-</form>
+      <h6>Credit Card details</h6>
 
-<div class="zk" id="zk-id"></div>
+      <div class="row checkout-form">
+         {{ payment_form | crispy }}
+      </div>
 
+      <div class="text-center mt-3">
+         <input id="submit_payment_btn" type="submit" class="submit btn btn-success mb-4" value="Submit Payment">
+      </div>
+   </form>
+
+   <div class="zk" id="zk-id"></div>
+</div>
 {% endblock %}
