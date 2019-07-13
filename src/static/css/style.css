@@ -104,7 +104,7 @@ form .alert ul li {
 #cart {
    position: absolute;
    top: 9px;
-   right: 140px;
+   right: 185px;
 }
 
 .card-price {
@@ -142,6 +142,9 @@ form .alert ul li {
    }
    .cart-body {
       display: inline;
+   }
+   #cart {
+      right: 30px !important;
    }
  }
 

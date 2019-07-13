@@ -6,6 +6,7 @@ $(window).on("scroll", function () {
          "top": "50px",
          "right": "30px",
          "z-index": "1001",
+         "padding": "10px",
          "border": "1.5px solid green",
          "border-radius": "14px",
       });
@@ -13,7 +14,7 @@ $(window).on("scroll", function () {
       $('#cart').css({
          "position": "absolute",
          "top": "9px",
-         "right": "140px",
+         "right": "185px",
          "border": "",
       });
    }
