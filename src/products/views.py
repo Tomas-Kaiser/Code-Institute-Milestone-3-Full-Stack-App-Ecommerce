@@ -4,7 +4,7 @@ from .models import Product
 
 # Render only kick scooters
 def kick_scooter_page(request):
-   qs = Product.objects.filter(slug__icontains='kick-scooter')
+   qs = Product.objects.kick_scooter()
    template_name = "kick_scooter/kick_scooters.html"
    context = {"kick_scooters_products": qs}
    return render(request, template_name, context)
@@ -19,7 +19,7 @@ def kick_scooter_detail(request, slug):
 
 # Render only eScooters
 def e_scooter_page(request):
-   qs = Product.objects.filter(slug__icontains='eScooter')
+   qs = Product.objects.e_scooter()
    template_name = "e_scooter/e_scooters.html"
    context = {"e_scooters_products": qs}
    return render(request, template_name, context)
@@ -33,7 +33,7 @@ def e_scooter_detail(request, slug):
 
 # Render only kid scooters
 def kid_scooter_page(request):
-   qs = Product.objects.filter(slug__icontains='kid-scooter')
+   qs = Product.objects.kid_scooter()
    template_name = "kid_scooter/kid_scooters.html"
    context = {"kid_scooters_products": qs}
    return render(request, template_name, context)
