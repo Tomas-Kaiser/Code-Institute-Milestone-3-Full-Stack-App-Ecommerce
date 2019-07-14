@@ -23,6 +23,10 @@
 
 <body>
    <div class="navbar navbar-expand-md navbar-light bg-light">
+      <form action="/search/" class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search product" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
       <h1 class="navbar-brand navbar-brand-center">
          <a class="navbar-brand" href="/">Scooters eShop</a>
       </h1>
@@ -65,7 +69,7 @@
                {% endif %}
             </a>
          </li>
-      <ul>
+         <ul>
    </div>
 
    {% block content %}
