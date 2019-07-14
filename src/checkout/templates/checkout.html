@@ -32,13 +32,15 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 pl-0">
          <h2 class="mb-1">{{ item.product.title }}</h2>
          <p class="mb-0">Qty: {{ item.quantity }}</p>
-         <p>Price: ${{ item.product.price }}</p>
+         <p class="mb-0">Price: ${{ item.product.price }} per unit</p>
+         <p>Total price: ${{ item.total_product_price }}</p>
       </div>
       {% endfor %}
 
    </div>
-
-   <h2 class="mt-4">Pay in Total: <strong style="color:red">${{ total }}</strong></h2>
+   <div class="row">
+      <h2 class="price-total mt-4">Pay in Total: <strong style="color:red">${{ total }}</strong></h2>
+   </div>
 
    <form role="form" action="{% url 'checkout' %}" id="payment-form" method="POST" class="mt-5">{% csrf_token %}
       <legend class="text-center">Payment Details</legend>

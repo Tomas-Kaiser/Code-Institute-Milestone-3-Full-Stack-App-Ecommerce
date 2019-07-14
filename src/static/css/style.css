@@ -152,6 +152,13 @@ form .alert ul li {
 
  /*** Checkout page ***/
 
+ .price-total {
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   display: inline-block;
+   padding: 5px 0;
+ }
+
  .checkout-form label {
    color: black;
 } 
