@@ -6,12 +6,12 @@ from .models import SearchQuery
 
 
 def searches(request):
-   query = request.GET.get('q', None)
+   query = request.GET.get('q', "")
    user = None
    if request.user.is_authenticated:
       user = request.user
    context = {"query": query}
-   if query is not None:
+   if query is not "":
       SearchQuery.objects.create(user=user, query=query)
       product_list = Product.objects.search(query=query)
       context['product_list'] = product_list

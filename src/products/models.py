@@ -35,6 +35,7 @@ class ProductManager(models.Manager):
 
        def search(self, query=None):
               if query is None:
+                     print("query is None")
                      return self.get_queryset().none()
               return self.get_queryset().search(query)
 

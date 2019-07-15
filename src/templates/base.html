@@ -23,10 +23,13 @@
 
 <body>
    <div class="navbar navbar-expand-md navbar-light bg-light">
-      <form action="/search/" class="form-inline my-2 my-lg-0">
-         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search product" aria-label="Search">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <form action="/search/" class="form-inline my-2 my-lg-0">
+            <input id="searchInput" class="form-control mr-sm-1" name="q" type="search" placeholder="Search product"
+               aria-label="SearchInput">
+            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+      </div>
       <h1 class="navbar-brand navbar-brand-center">
          <a class="navbar-brand" href="/">Scooters eShop</a>
       </h1>
@@ -110,6 +113,15 @@
 
 
    <script src="{% static 'js/cart.js' %}"></script>
+
+   <script>
+      $(document).ready(function () {
+         $('#searchBtn').prop('disabled', true);
+         $('#searchInput').keyup(function () {
+            $('#searchBtn').prop('disabled', this.value == "" ? true && $('#searchBtn').css({ "cursor": "not-allowed" }) : false);
+         })
+      });
+   </script>
 
    {% block ajax_js%}
    {% endblock ajax_js%}

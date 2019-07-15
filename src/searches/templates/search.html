@@ -3,21 +3,75 @@
 {% block head_title %}Search{% endblock %}
 
 {% block content %}
-<div class="row">
-   <div class="col-12 mx-auto">
-      {% if query %}
-      <p class="lead">You searched for {{ query }}</p>
-      {% else %}
-      <form action="/search/" class="form-inline my-2 my-lg-0">
-         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search product" aria-label="Search">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      {% endif %}
+<div class="container">
+   <div class="row">
+      <div class="col-12 mx-auto">
+         {% if query %}
+         <p class="lead">You searched for {{ query }}</p>
+         {% else %}  
+         <p class="lead text-danger">Please, use the input field for lookup in the left corner or click on the hamburger menu.</p>
+         {% endif %}
+      </div>
+   </div>
+</div>
 
-      {% for product_item in product_list %}
-         <p>{{ product_item.title }}</p>
+<div class="container">
+   <div class="row">
+      {% for product in product_list %}
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+         <div class="card" style="width: 18rem; margin:auto;">
+            <a href="{{ product.get_absolute_url }}">
+               <img class="card-img-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+            </a>
+            <div class="card-body">
+               <a href="{{ product.get_absolute_url }}">
+                  <h5 class="card-title text-center">{{ product.title }}</h5>
+               </a>
+               <ul>
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_1|truncatewords:5 }}</li>
+                  {% endif %}
+
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_2|truncatewords:5 }}</li>
+                  {% endif %}
+
+                  {% if product.feature_1 != None %}
+                  <li>{{ product.feature_3|truncatewords:5 }}</li>
+                  {% endif %}
+               </ul>
+               <p class="card-text">{{ product.content|truncatewords:10 }}</p>
+
+               <form method="POST">
+                  {% csrf_token %}
+                  <div class="input-group">
+                     <div class="card-price">
+                        <span class="price">${{ product.price }}</span>
+                        <span class="input-group-btn float-right">
+                           <button class="btn btn-success addProductBtn" price="{{ product.price }}"
+                              productId="{{ product.id }}">Add to cart</button>
+                        </span>
+                     </div>
+                  </div>
+               </form>
+
+               {% if product.stock > 5 %}
+               <div class="card-stock mt-2 text-center">
+                  <span class="text-success font-weight-bold">In stock > {{ product.stock}} pcs</span>
+               </div>
+               {% elif product.stock <= 5 and product.stock > 0 %}
+               <div class="card-stock mt-2 text-center">
+                  <span class="text-success font-weight-bold">In stock: {{ product.stock}} pcs</span>
+               </div>
+               {% else %}
+               <div class="card-stock mt-2 text-center">
+                  <span class="text-danger font-weight-bold">Run out of stock</span>
+               </div>
+               {% endif %}
+            </div>
+         </div>
+      </div>
       {% endfor %}
-
    </div>
 </div>
 {% endblock %}
