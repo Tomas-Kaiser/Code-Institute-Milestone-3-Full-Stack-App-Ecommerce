@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Search{% endblock %}
+
+{% block content %}
+<div class="row">
+   <div class="col-12 mx-auto">
+      {% if query %}
+      <p class="lead">You searched for {{ query }}</p>
+      {% else %}
+      <form action="/search/" class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search product" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      {% endif %}
+
+      {% for product_item in product_list %}
+         <p>{{ product_item.title }}</p>
+      {% endfor %}
+
+   </div>
+</div>
+{% endblock %}
