@@ -1,14 +1,43 @@
 from django.db import models
+from django.db.models import Q
 
-class ProductManager(models.Manager):
+class ProductQuerySet(models.QuerySet):
        def kick_scooter(self):
-              return self.get_queryset().filter(slug__icontains='kick-scooter')
+              return self.filter(slug__icontains='kick-scooter')
 
        def e_scooter(self):
-              return self.get_queryset().filter(slug__icontains='eScooter')
+              return self.filter(slug__icontains='eScooter')
+
+       def kid_scooter(self):
+              return self.filter(slug__icontains='kid-scooter')
+
+       def search(self, query):
+              lookup = (
+                     Q(title__icontains=query) |
+                     Q(content__icontains=query) |
+                     Q(slug__icontains=query)
+              )
+
+              return self.filter(lookup)
+
+class ProductManager(models.Manager):
+       def get_queryset(self):
+              return ProductQuerySet(self.model, using=self._db)
+
+       def kick_scooter(self):
+              return self.get_queryset().kick_scooter()
+
+       def e_scooter(self):
+              return self.get_queryset().e_scooter()
               
        def kid_scooter(self):
-              return self.get_queryset().filter(slug__icontains='kid-scooter')
+              return self.get_queryset().kid_scooter()
+
+       def search(self, query=None):
+              if query is None:
+                     print("query is None")
+                     return self.get_queryset().none()
+              return self.get_queryset().search(query)
 
 
 class Product(models.Model):
