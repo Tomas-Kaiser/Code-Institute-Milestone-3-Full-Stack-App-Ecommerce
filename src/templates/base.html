@@ -118,7 +118,7 @@
       $(document).ready(function () {
          $('#searchBtn').prop('disabled', true);
          $('#searchInput').keyup(function () {
-            $('#searchBtn').prop('disabled', this.value == "" ? true && $('#searchBtn').css({ "cursor": "not-allowed" }) : false);
+            $('#searchBtn').prop('disabled', this.value == "" ? true : false);
          })
       });
    </script>

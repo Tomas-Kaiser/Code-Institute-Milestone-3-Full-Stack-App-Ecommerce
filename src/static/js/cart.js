@@ -21,7 +21,7 @@ $(window).on("scroll", function () {
 });
 
 // Animation when adding a new product into shopping cart
-$("button").on("click", function () {
+$(".addProductBtn").on("click", function () {
    $(".badge").addClass("zoom")
 
    setTimeout(function () {
