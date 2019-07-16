@@ -1,3 +1,4 @@
+// Disabled seach button when input is empty
 $(document).ready(function () {
    let searchBtn = $('#searchBtn');
    let searchInput = $('#searchInput');
