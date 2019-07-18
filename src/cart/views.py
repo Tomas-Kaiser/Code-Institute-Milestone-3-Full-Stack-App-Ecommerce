@@ -13,6 +13,7 @@ def add_to_cart(request, id):
    """
    Add a quantity of the specified product to the cart
    """
+
    if request.method == 'POST':
       quantity = int(request.POST['quantity'])
 
