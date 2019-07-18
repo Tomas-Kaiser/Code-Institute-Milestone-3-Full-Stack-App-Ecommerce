@@ -15,15 +15,11 @@ def checkout(request):
    order_form = OrderForm(request.POST or None)
    payment_form = PaymentForm(request.POST or None)
 
-
-   print("Valid order_from? ", order_form.is_valid())
-   print("Valid payment_form", payment_form.is_valid())
    if order_form.is_valid() and payment_form.is_valid():
       order = order_form.save(commit=False)
       order.date = timezone.now()
       order.save()
 
-      print("Are we going here?")
 
       cart = request.session.get('cart', {})
       total = 0
@@ -35,6 +31,26 @@ def checkout(request):
             product = product,
             quantity = quantity
          )
+
+         # new_stock = product.stock - quantity
+
+         # stock = Product(
+         #    stock = new_stock
+         # )
+         # stock.save()
+
+
+         print(product)
+         print("********** STOCK **********")
+         print(product.stock)
+         print("********** minus qty **********")
+         print(product.stock - quantity)
+
+         new_stock = product.stock - quantity
+
+         product.stock = new_stock
+         product.save()
+
          order_line_item.save()
 
       if request.user.is_authenticated:
@@ -64,9 +80,6 @@ def checkout(request):
          return redirect('home')
       else:
          messages.error(request, "Unable o take payment")
-   # else:
-   #    print(payment_form.errors)
-   #    messages.error(request, "We were unable to take a payment with that card!")
       
    context = {
       'order_form': order_form,
