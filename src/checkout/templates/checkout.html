@@ -36,8 +36,12 @@
          <p>Total price: ${{ item.total_product_price }}</p>
       </div>
       {% endfor %}
-
    </div>
+
+   {% if stock %}
+   <div class="text-danger">{{ product }}: {{ stock }}, only avaliable {{ quantity }}</div>
+   {% endif %}
+
    <div class="row">
       <h2 class="price-total mt-4">Pay in Total: <strong style="color:red">${{ total }}</strong></h2>
    </div>

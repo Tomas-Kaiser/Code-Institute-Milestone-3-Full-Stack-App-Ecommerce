@@ -32,24 +32,23 @@ def checkout(request):
             quantity = quantity
          )
 
-         # new_stock = product.stock - quantity
+         if product.stock > quantity:
+            new_stock = product.stock - quantity
+            product.stock = new_stock
+            product.save()
 
-         # stock = Product(
-         #    stock = new_stock
-         # )
-         # stock.save()
+         else:
+            print(product, "not enough at stock")
+            context = {
+               'order_form': order_form,
+               'payment_form': payment_form,
+               'publishable': settings.STRIPE_PUBLISHABLE,
+               'product': product,
+               'quantity': product.stock,
+               'stock': "Not enough in stock",
+            }
 
-
-         print(product)
-         print("********** STOCK **********")
-         print(product.stock)
-         print("********** minus qty **********")
-         print(product.stock - quantity)
-
-         new_stock = product.stock - quantity
-
-         product.stock = new_stock
-         product.save()
+            return render(request, "checkout.html", context)
 
          order_line_item.save()
 
