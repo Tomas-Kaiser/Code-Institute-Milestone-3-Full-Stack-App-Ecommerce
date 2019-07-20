@@ -63,7 +63,7 @@
                            <button class="btn btn-success addProductBtn" disabled>Cannot add</button>
                            {% else %}
                            <button class="btn btn-success addProductBtn" price="{{ product.price }}"
-                              productId="{{ product.id }}" >Add to cart</button>
+                              productId="{{ product.id }}">Add to cart</button>
                            {% endif %}
                         </span>
                      </div>
@@ -92,6 +92,9 @@
 {% endblock %}
 
 {% block ajax_js%}
+<script>
+
+</script>
 <script>
    // Global variable for ajax.js otherwise the url would be wrong in the file
    url = '{% url "add-to-cart" 0 %}';
@@ -128,4 +131,6 @@
       });
    });
 </script>
+
+
 {% endblock ajax_js%}
