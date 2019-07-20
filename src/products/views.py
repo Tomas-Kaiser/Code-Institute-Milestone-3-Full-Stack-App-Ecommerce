@@ -11,7 +11,6 @@ def kick_scooter_page(request):
 
 def kick_scooter_detail(request, slug):
    qs = get_object_or_404(Product, slug=slug)
-   print(qs)
    template_name = "kick_scooter/kick_scooter_detail.html"
    context = {"kick_scooter_detail": qs}
    return render(request, template_name, context)
