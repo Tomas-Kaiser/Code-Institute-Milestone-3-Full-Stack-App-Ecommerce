@@ -41,6 +41,22 @@ h2 {
    object-fit: cover;
 }
 
+.navigation a {
+   color: white;
+}
+
+.navigation h2:hover {
+   color: rgb(197, 197, 197);
+   text-decoration: none;
+   opacity: 0.5;
+   transition: 1s ease-in-out;
+}
+
+.navigation img:hover {
+   opacity: 0.5;
+   transition: 1s ease-in-out;
+}
+
 .element-padding--zero {
    padding: 0;
 }

@@ -32,7 +32,7 @@ def checkout(request):
             quantity = quantity
          )
 
-         if product.stock > quantity:
+         if product.stock >= quantity:
             new_stock = product.stock - quantity
             product.stock = new_stock
             product.save()

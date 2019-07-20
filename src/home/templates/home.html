@@ -4,22 +4,25 @@
 
 {% block content %}
 
-<nav role="navigation" class="container-fluid">
+<nav role="navigation" class="container-fluid navigation">
    <div class="row">
       <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center bg-secondary text-white">Kick Scooters</h2>
-         <img class="img-menu" src="{{ MEDIA_URL }}images/kick_scooter.jpg" alt="Kick scooter">
-         <a href="{% url 'kick-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">Kick Scooters</a>
+         <a href="{% url 'kick-scooter-products' %}">
+            <h2 class="text-center bg-secondary ">Kick Scooters</h2>
+            <img class="img-menu" src="{{ MEDIA_URL }}images/kick_scooter.jpg" alt="Kick scooter">
+         </a>
       </div>
       <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center bg-secondary text-white">eScooters</h2>
-         <img class="img-menu" src="{{ MEDIA_URL }}images/eScooter.jpg" alt="Eletric scooter">
-         <a href="{% url 'e-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">eScooters</a>
+         <a href="{% url 'e-scooter-products' %}">
+            <h2 class="text-center bg-secondary ">eScooters</h2>
+            <img class="img-menu" src="{{ MEDIA_URL }}images/eScooter.jpg" alt="Eletric scooter">
+         </a>
       </div>
       <div class="col-md-4 element-padding--zero">
-         <h2 class="text-center bg-secondary text-white">Scooters for kids</h2>
-         <img class="img-menu" src="{{ MEDIA_URL }}images/kid_scooter.jpg" alt="Scooter for kids">
-         <a href="{% url 'kid-scooter-products' %}" class="btn btn-primary btn-menu-center font-weight-bold text-white cursor-pointer">Scooters for kids</a>
+         <a href="{% url 'kid-scooter-products' %}">
+            <h2 class="text-center bg-secondary ">Scooters for kids</h2>
+            <img class="img-menu" src="{{ MEDIA_URL }}images/kid_scooter.jpg" alt="Scooter for kids">
+         </a>
       </div>
    </div>
 </nav>
