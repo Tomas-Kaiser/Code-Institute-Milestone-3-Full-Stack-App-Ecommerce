@@ -8,8 +8,9 @@
       <div class="col-12 mx-auto">
          {% if query %}
          <p class="lead">You searched for {{ query }}</p>
-         {% else %}  
-         <p class="lead text-danger">Please, use the input field for lookup in the left corner or click on the hamburger menu.</p>
+         {% else %}
+         <p class="lead text-danger">Please, use the input field for lookup in the left corner or click on the hamburger
+            menu.</p>
          {% endif %}
       </div>
    </div>
@@ -40,7 +41,7 @@
                   <li>{{ product.feature_3|truncatewords:5 }}</li>
                   {% endif %}
                </ul>
-               <p class="card-text">{{ product.content|truncatewords:10 }}</p>
+               <p class="card-text">{{ product.content|truncatewords:7 }}</p>
 
                <form method="POST">
                   {% csrf_token %}
@@ -74,4 +75,45 @@
       {% endfor %}
    </div>
 </div>
+
 {% endblock %}
+
+{% block ajax_js%}
+<script>
+   // Global variable for ajax.js otherwise the url would be wrong in the file
+   url = '{% url "add-to-cart" 0 %}';
+
+   // AJAX request when click on add product btn
+   $(function () {
+      console.log(url)
+      $('.addProductBtn').on('click', function (e) {
+         let productId = $(this).attr("productId")
+         url = url.replace('0', productId)
+
+         $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+               productId: productId,
+               quantity: 1,
+               csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (data) {
+               if ($('.badge').length === 0) {
+                  $('#cart').append("<span class='badge badge-warning'>1</span>")
+               } else {
+                  let numberItems = $('.badge').text()
+                  numberItems++
+                  $('.badge').text(numberItems)
+               }
+            }
+         });
+
+         // Return default id 0
+         url = '{% url "add-to-cart" 0 %}';
+         e.preventDefault();
+      });
+   });
+</script>
+
+{% endblock ajax_js%}
