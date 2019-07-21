@@ -4,24 +4,24 @@
 
 {% block content %}
 <nav class="container-fluid">
-      <div class="row">
-         <div class="col-md-4 element-padding--zero">
-            <a href="{% url 'kick-scooter-products' %}">
-               <h2 class="text-center bg-secondary text-white">Kick Scooters</h2>
-            </a>
-         </div>
-         <div class="col-md-4 element-padding--zero">
-            <a href="{% url 'e-scooter-products' %}">
-               <h2 class="text-center bg-secondary text-white">eScooters</h2>
-            </a>
-         </div>
-         <div class="col-md-4 element-padding--zero">
-            <a href="{% url 'kid-scooter-products' %}">
-               <h2 class="text-center text-white active">Scooters for kids</h2>
-            </a>
-         </div>
+   <div class="row bg-black">
+      <div class="col-md-4 element-padding--zero">
+         <a href="{% url 'kick-scooter-products' %}">
+            <h2 class="text-center text-white">Kick Scooters</h2>
+         </a>
       </div>
-   </nav>
+      <div class="col-md-4 element-padding--zero">
+         <a href="{% url 'e-scooter-products' %}">
+            <h2 class="text-center text-white">eScooters</h2>
+         </a>
+      </div>
+      <div class="col-md-4 element-padding--zero">
+         <a href="{% url 'kid-scooter-products' %}">
+            <h2 class="text-center text-white active">Scooters for kids</h2>
+         </a>
+      </div>
+   </div>
+</nav>
 
 <div class="link">
    <a href="/">Home</a> > Kid Scooters
@@ -59,7 +59,13 @@
                      <div class="card-price">
                         <span class="price">${{ product.price }}</span>
                         <span class="input-group-btn float-right">
-                           <button class="btn btn-success addProductBtn" price="{{ product.price }}" productId="{{ product.id }}">Add to cart</button>
+                           {% if product.stock == 0 %}
+                           <button class="btn bg-blue addProductBtn text-white btn-border--blue" disabled>Cannot
+                              add</button>
+                           {% else %}
+                           <button class="btn bg-blue addProductBtn text-white btn-border--blue"
+                              price="{{ product.price }}" productId="{{ product.id }}">Add to cart</button>
+                           {% endif %}
                         </span>
                      </div>
                   </div>
@@ -71,7 +77,7 @@
                </div>
                {% elif product.stock <= 5 and product.stock > 0 %}
                <div class="card-stock mt-2 text-center">
-                  <span class="text-success font-weight-bold">In stock: {{ product.stock}} pcs</span>
+                  <span class="text-success font-weight-bold">Less then 5 pcs in stock</span>
                </div>
                {% else %}
                <div class="card-stock mt-2 text-center">
@@ -88,40 +94,40 @@
 
 {% block ajax_js%}
 <script>
-      // Global variable for ajax.js otherwise the url would be wrong in the file
-      url = '{% url "add-to-cart" 0 %}';
-   
-      // AJAX request when click on add product btn
-      $(function () {
-         console.log(url)
-         $('.addProductBtn').on('click', function (e) {
-            let productId = $(this).attr("productId")
-            url = url.replace('0', productId)
-   
-            $.ajax({
-               type: 'POST',
-               url: url,
-               data: {
-                  productId: productId,
-                  quantity: 1,
-                  csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-               },
-               success: function (data) {
-                  if ($('.badge').length === 0) {
-                     $('#cart').append("<span class='badge badge-warning'>1</span>")
-                  } else {
-                     let numberItems = $('.badge').text()
-                     numberItems++
-                     $('.badge').text(numberItems)
-                  }
+   // Global variable for ajax.js otherwise the url would be wrong in the file
+   url = '{% url "add-to-cart" 0 %}';
+
+   // AJAX request when click on add product btn
+   $(function () {
+      console.log(url)
+      $('.addProductBtn').on('click', function (e) {
+         let productId = $(this).attr("productId")
+         url = url.replace('0', productId)
+
+         $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+               productId: productId,
+               quantity: 1,
+               csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (data) {
+               if ($('.badge').length === 0) {
+                  $('#cart').append("<span class='badge badge-warning'>1</span>")
+               } else {
+                  let numberItems = $('.badge').text()
+                  numberItems++
+                  $('.badge').text(numberItems)
                }
-            });
-   
-            // Return default id 0
-            url = '{% url "add-to-cart" 0 %}';
-            e.preventDefault();
+            }
          });
+
+         // Return default id 0
+         url = '{% url "add-to-cart" 0 %}';
+         e.preventDefault();
       });
-   </script>
-   
+   });
+</script>
+
 {% endblock ajax_js%}

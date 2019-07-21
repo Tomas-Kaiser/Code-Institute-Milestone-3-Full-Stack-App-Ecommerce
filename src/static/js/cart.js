@@ -7,8 +7,9 @@ $(window).on("scroll", function () {
          "right": "30px",
          "z-index": "1001",
          "padding": "10px",
-         "border": "1.5px solid green",
+         "border": "1.5px solid #4279bd",
          "border-radius": "14px",
+         "background": "#052c5c",
       });
    } else {
       $('#cart').css({
@@ -16,6 +17,7 @@ $(window).on("scroll", function () {
          "top": "9px",
          "right": "185px",
          "border": "",
+         "background": "none",
       });
    }
 });

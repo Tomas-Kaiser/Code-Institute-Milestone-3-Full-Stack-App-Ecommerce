@@ -1,4 +1,7 @@
 /*** SELECTORS ***/
+body {
+   background-color: #fffdf6;
+}
 
 h2 {
    margin: 0;
@@ -14,6 +17,13 @@ h2 {
    }
  }
 
+ .bg-black {
+   background-color: black;
+ }
+
+ .bg-blue {
+   background-color: #052c5c;
+ }
 
 
 /*** NAV BAR ***/
@@ -30,6 +40,14 @@ h2 {
 
 #searchInput {
    width: 160px;
+}
+
+.nav-link {
+   color: white;
+}
+
+.nav-link:hover {
+   color: #d5d5f7;
 }
 
 
@@ -66,7 +84,7 @@ h2 {
 }
 
 .active {
-   background: #007bff;
+   background: #1468cf;
 }
 
 .badge {
@@ -119,12 +137,24 @@ form .alert ul li {
    margin: 10px 0px 10px 5px;
 }
 
+.link a {
+   color: #052c5c;
+}
+
+.link a:hover {
+   color: #1468cf;
+}
+
 /*** PRODUCT CARDS ***/
 
 #cart {
    position: absolute;
    top: 9px;
    right: 185px;
+}
+
+.card {
+   border-width: 2px;
 }
 
 .card-img-top {
@@ -134,6 +164,10 @@ form .alert ul li {
    width: auto;
 }
 
+.card-body a {
+   color: black;
+}
+
 .card-price {
    width: 100%;
    line-height: 40px;
@@ -141,11 +175,19 @@ form .alert ul li {
 
 .price {
    font-weight: bold;
-   color: #c30000;
+   color: black;
 }
 
 .card-stock {
    width: 100%;
+}
+
+.btn-border--blue {
+   border: 2px solid #336fb8;
+}
+
+.btn:hover {
+   background: #336fb8;
 }
 
 .zoom {

@@ -45,10 +45,10 @@
                <div class="card-price">
                   <span class="price">${{ kid_scooter_detail.price }}</span>
                   <span class="input-group-btn float-right">
-                     {% if product.stock == 0 %}
-                     <button class="btn btn-success" type="submit" disabled>Cannot add</button>
+                     {% if kid_scooter_detail.stock == 0 %}
+                     <button class="btn bg-blue text-white btn-border--blue" type="submit" disabled>Cannot add</button>
                      {% else %}
-                     <button class="btn btn-success" type="submit">Add to cart</button>
+                     <button class="btn bg-blue text-white btn-border--blue" type="submit">Add to cart</button>
                      {% endif %}
                   </span>
                </div>
@@ -61,7 +61,7 @@
          </div>
          {% elif kid_scooter_detail.stock <= 5 and kid_scooter_detail.stock > 0 %}
          <div class="card-stock mt-2 text-right">
-            <span class="text-success font-weight-bold">Less then: 5 pcs in stock</span>
+            <span class="text-success font-weight-bold">Less then 5 pcs in stock</span>
          </div>
          {% else %}
          <div class="card-stock mt-2 text-right">
