@@ -25,12 +25,12 @@
    <div class="navbar navbar-expand-md bg-blue">
 
       <!-- Hamburger Menu -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      <button class="navbar-toggler mb-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
       <!-- /Hamburger Menu -->
-      
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <form action="/search/" class="form-inline my-0">
             <input id="searchInput" class="form-control mr-sm-1" name="q" type="search" placeholder="Search product"
@@ -38,6 +38,7 @@
             <button id="searchBtn" class="btn btn-outline-light my-2 my-sm-0" type="submit" disabled>Search</button>
          </form>
       </div>
+
       <h1 class="navbar-brand navbar-brand-center">
          <a class="navbar-brand text-white" href="/">Scooters eShop</a>
       </h1>
@@ -105,7 +106,7 @@
 
    {% endif %}
    <!-- /Modal -->
-   
+
 
    {% include 'js.html' %}
    <script src="{% static 'js/modal.js' %}"></script>
@@ -117,7 +118,7 @@
    <script src="{% static 'js/cart.js' %}"></script>
    <script src="{% static 'js/searchBtn.js' %}"></script>
    <script src="{% static 'js/flyAnimation.js' %}"></script>
- 
+
    {% block ajax_js%}
    {% endblock ajax_js%}
    {% block stripe_js%}
