@@ -212,10 +212,6 @@ form .alert ul li {
    background: url(../img/bg_login.jpg) no-repeat center center fixed; 
  }
 
- .bg-register { 
-   background: url(../img/bg_register.jpg) no-repeat center center fixed; 
- }
-
  .full-width-bg-img {
    -webkit-background-size: cover;
    -moz-background-size: cover;
