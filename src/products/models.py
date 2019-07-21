@@ -54,7 +54,7 @@ class Product(models.Model):
    objects     = ProductManager()
 
    def __str__(self):
-          return self.title
+          return self.slug
 
    def get_absolute_url(self):
           return f"{self.slug}"

@@ -51,7 +51,7 @@
                   <li>{{ product.feature_3|truncatewords:5 }}</li>
                   {% endif %}
                </ul>
-               <p class="card-text">{{ product.content|truncatewords:10 }}</p>
+               <p class="card-text">{{ product.content|truncatewords:7 }}</p>
 
                <form method="POST">
                   {% csrf_token %}

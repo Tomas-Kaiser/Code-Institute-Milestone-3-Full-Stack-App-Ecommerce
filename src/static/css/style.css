@@ -134,6 +134,13 @@ form .alert ul li {
    right: 185px;
 }
 
+.card-img-top {
+   height: 222px;
+   display: flex;
+   margin: auto;
+   width: auto;
+}
+
 .card-price {
    width: 100%;
    line-height: 40px;
