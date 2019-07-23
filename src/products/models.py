@@ -42,7 +42,7 @@ class ProductManager(models.Manager):
 
 class Product(models.Model):
    title       = models.CharField(max_length=120)
-   image       = models.ImageField(upload_to='images/', blank=False)
+   image       = models.ImageField(upload_to='images/', blank=True)
    slug        = models.SlugField(unique=True) 
    stock       = models.IntegerField(blank=False)
    feature_1   = models.CharField(max_length=220, null=True, blank=True)
