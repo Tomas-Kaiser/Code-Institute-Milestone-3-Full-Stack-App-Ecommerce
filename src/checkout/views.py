@@ -38,7 +38,6 @@ def checkout(request):
             product.save()
 
          else:
-            print(product, "not enough at stock")
             context = {
                'order_form': order_form,
                'payment_form': payment_form,
