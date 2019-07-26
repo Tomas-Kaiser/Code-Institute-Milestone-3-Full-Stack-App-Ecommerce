@@ -15,5 +15,5 @@ urlpatterns = [
     path('kid-scooters/', kid_scooter_page, name="kid-scooter-products"),
     path('kick-scooters/<str:slug>', kick_scooter_detail, name="kick-scooter-detail"),
     path('e-scooters/<str:slug>', e_scooter_detail, name="e-scooter-detail"),
-    path('kid-scooters/<str:slug>', kid_scooter_detail, name="kid-scooter-detail"), 
+    path('kid-scooters/<str:slug>', kid_scooter_detail, name="kid-scooter-detail"),
 ]
