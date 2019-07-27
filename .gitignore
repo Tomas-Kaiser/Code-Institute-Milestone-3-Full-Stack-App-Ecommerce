@@ -1,4 +1,5 @@
 .vscode
+.travis.yml
 Pipfile
 Pipfile.lock
 env.py
