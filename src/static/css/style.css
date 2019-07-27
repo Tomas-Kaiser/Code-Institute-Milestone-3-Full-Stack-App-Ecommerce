@@ -276,6 +276,11 @@ form .alert ul li {
    margin: 0 5px 0 5px;
 } 
 
+#stripe-error-message {
+   color: red;
+   font-size: 19px;
+}
+
 
 
 /*** BACKGROUND IMG ***/
