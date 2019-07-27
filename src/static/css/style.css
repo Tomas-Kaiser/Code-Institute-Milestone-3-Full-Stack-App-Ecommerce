@@ -182,6 +182,14 @@ form .alert ul li {
    right: 185px;
 }
 
+.removeBtnCart {
+   border: 0;
+   background: inherit;
+   color: red;
+   font-size: 22px;
+   font-weight: bold;
+}
+
 .card {
    border-width: 2px;
 }

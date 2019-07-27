@@ -49,3 +49,12 @@ def edit_cart(request, id):
 
    return redirect('cart')
 
+
+def remove_item_cart(request, id):
+   quantity = int(request.POST['remove'])
+   cart = request.session.get('cart', {})
+   cart.pop(str(id))
+   request.session['cart'] = cart
+
+   return redirect('cart')
+
