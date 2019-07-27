@@ -3,25 +3,8 @@
 {% block head_title %}Kick Scooters{% endblock %}
 
 {% block content %}
-<nav class="container-fluid">
-   <div class="row bg-black">
-      <div class="col-md-4 element-padding--zero">
-         <a href="{% url 'kick-scooter-products' %}">
-            <h2 class="text-center text-white">Kick Scooters</h2>
-         </a>
-      </div>
-      <div class="col-md-4 element-padding--zero">
-         <a href="{% url 'e-scooter-products' %}">
-            <h2 class="text-center text-white active">eScooters</h2>
-         </a>
-      </div>
-      <div class="col-md-4 element-padding--zero">
-         <a href="{% url 'kid-scooter-products' %}">
-            <h2 class="text-center text-white">Scooters for kids</h2>
-         </a>
-      </div>
-   </div>
-</nav>
+
+{% include 'navbar.html' with e_scooter=True %}
 
 <div class="link">
    <a href="/">Home</a> > eScooters
@@ -37,40 +20,5 @@
 {% endblock %}
 
 {% block ajax_js%}
-<script>
-   // Global variable for ajax.js otherwise the url would be wrong in the file
-   url = '{% url "add-to-cart" 0 %}';
-
-   // AJAX request when click on add product btn
-   $(function () {
-      console.log(url)
-      $('.addProductBtn').on('click', function (e) {
-         let productId = $(this).attr("productId")
-         url = url.replace('0', productId)
-
-         $.ajax({
-            type: 'POST',
-            url: url,
-            data: {
-               productId: productId,
-               quantity: 1,
-               csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-            },
-            success: function (data) {
-               if ($('.badge').length === 0) {
-                  $('#cart').append("<span class='badge badge-warning'>1</span>")
-               } else {
-                  let numberItems = $('.badge').text()
-                  numberItems++
-                  $('.badge').text(numberItems)
-               }
-            }
-         });
-
-         // Return default id 0
-         url = '{% url "add-to-cart" 0 %}';
-         e.preventDefault();
-      });
-   });
-</script>
+{% include 'jsAjax.html'  %}
 {% endblock ajax_js%}
