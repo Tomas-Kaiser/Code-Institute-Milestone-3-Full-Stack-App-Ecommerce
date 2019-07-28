@@ -1,0 +1,1 @@
+web: gunicorn --chdir src ecommerce.wsgi
