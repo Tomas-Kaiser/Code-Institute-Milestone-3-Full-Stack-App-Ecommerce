@@ -1,1 +1,1 @@
-web: gunicorn src.ecommerce.wsgi:application
+web: sh -c 'cd src && gunicorn ecommerce.wsgi:application'
