@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath src ecommerce wsgi:application
+web: gunicorn src.ecommerce.wsgi:application
