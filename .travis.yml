@@ -2,9 +2,9 @@ language: python
 python:
 - "3.6.5"
 install: "pip install -r requirements.txt"
-#env:
- # global:
-  #  SECRET_KEY="whatever"
+env:
+  global:
+    SECRET_KEY="whatever"
 script:
   - cd src
   - python manage.py test
