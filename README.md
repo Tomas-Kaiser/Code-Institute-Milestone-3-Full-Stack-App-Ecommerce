@@ -22,12 +22,19 @@ This is aiming at people who are looking for buying a kick scooter, eScooter or 
 * As a user I want to see checkout so that I can proceed with payment
 * As a user I want to see in checkout page a sammery of shopping cart so that I see what I am going to buy
 
+### Wireframes:  
+The following wireframes were created in order to provide a starting point for the website skeleton:
+
+* [mobile device](wireframes/E-commerce-mobile)
+* [desktop device](wireframes/E-commerce-desktop)
+
+
 ## Technologies Used
 I used following technologies for this particular project:
 * HTML5
 * CSS3
-  * [Bootstrap](https://getbootstrap.com/)
-  * [Font Awesome](https://fontawesome.com/)
+   * [Bootstrap](https://getbootstrap.com/)
+   * [Font Awesome](https://fontawesome.com/)
 * [Python](https://www.python.org/)
    * [Django 2.2](https://docs.djangoproject.com/en/2.2/releases/2.2/)
 * Javascript ([jQuery](https://jquery.com/))
