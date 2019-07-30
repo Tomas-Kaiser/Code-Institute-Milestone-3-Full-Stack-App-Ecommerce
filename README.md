@@ -21,3 +21,21 @@ This is aiming at people who are looking for buying a kick scooter, eScooter or 
 * As a user I want to see sammery of my cart so that I can easily see how much it costs
 * As a user I want to see checkout so that I can proceed with payment
 * As a user I want to see in checkout page a sammery of shopping cart so that I see what I am going to buy
+
+## Technologies Used
+I used following technologies for this particular project:
+* HTML5
+* CSS3
+  * [Bootstrap](https://getbootstrap.com/)
+  * [Font Awesome](https://fontawesome.com/)
+* [Python](https://www.python.org/)
+   * [Django 2.2](https://docs.djangoproject.com/en/2.2/releases/2.2/)
+* Javascript ([jQuery](https://jquery.com/))
+* [Stripe](https://stripe.com/)
+* [AWS S3](https://aws.amazon.com/s3/)
+* [SQLite](https://www.sqlite.org/index.html)
+* [Postgresql](https://www.postgresql.org/)
+* [Heroku](https://heroku.com/)
+* [Adobe Xd](https://www.adobe.com/cz/products/xd.html)
+* [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
+* [GIMP](https://www.gimp.org/)
