@@ -46,3 +46,6 @@ I used following technologies for this particular project:
 * [Adobe Xd](https://www.adobe.com/cz/products/xd.html)
 * [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
 * [GIMP](https://www.gimp.org/)
+
+## Contributing
+This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
