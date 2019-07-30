@@ -4,3 +4,6 @@
 This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was build with semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2.
 
 Live version deployed on Heroku [here](https://django-ecommerce-milestone.herokuapp.com/).
+
+## UX
+This is aiming at people who are looking for buying a kick scooter, eScooter or scooter for kid.
