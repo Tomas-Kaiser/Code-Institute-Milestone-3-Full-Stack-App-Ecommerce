@@ -7,13 +7,17 @@
    <div class="row">
       <div class="col-12 mx-auto">
          {% if query %}
-         <p class="lead">You searched for {{ query }}</p>
+         <p class="lead mt-2 mb-0">You searched for "<em>{{ query }}</em>"</p>
          {% else %}
          <p class="lead text-danger">Please, use the input field for lookup in the left corner or click on the hamburger
             menu.</p>
          {% endif %}
       </div>
    </div>
+</div>
+
+<div class="link mt-0">
+   <a href="/">Home</a> > Search
 </div>
 
 <div class="container">
