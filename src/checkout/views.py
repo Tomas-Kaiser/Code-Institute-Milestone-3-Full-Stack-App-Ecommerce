@@ -7,7 +7,6 @@ from django.utils import timezone
 from products.models import Product
 from .models import OrderLineItem
 
-# Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
 def checkout(request):
@@ -32,6 +31,7 @@ def checkout(request):
             quantity = quantity
          )
 
+         # Check if we have a stock
          if product.stock >= quantity:
             new_stock = product.stock - quantity
             product.stock = new_stock
