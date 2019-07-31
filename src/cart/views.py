@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-# Create your views here.
-
 def cart_page(request):
    """
    A view that renders the cart contents page
@@ -51,6 +49,9 @@ def edit_cart(request, id):
 
 
 def remove_item_cart(request, id):
+   """
+   Remove the whole specified product from the cart
+   """
    quantity = int(request.POST['remove'])
    cart = request.session.get('cart', {})
    cart.pop(str(id))
