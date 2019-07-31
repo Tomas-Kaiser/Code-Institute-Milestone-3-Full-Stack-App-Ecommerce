@@ -20,7 +20,10 @@ This is aiming at people who are looking for buying a kick scooter, eScooter or 
 * As a user I want to see sammery of my cart so that I can easily amended amount of itmes
 * As a user I want to see sammery of my cart so that I can easily see how much it costs
 * As a user I want to see checkout so that I can proceed with payment
-* As a user I want to see in checkout page a sammery of shopping cart so that I see what I am going to buy
+* As a user I want to see in checkout page a sammery of shopping cart so that I see what I am going to 
+* As a user I want to search field so that I can look up a scooter
+* As a user I want to see if the scooter is in stock
+* As a user I want to use a mobile phone for buying a scooter
 
 ### Wireframes:  
 The following wireframes were created in order to provide a starting point for the website skeleton:
