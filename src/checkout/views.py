@@ -59,6 +59,14 @@ def checkout(request):
                description = request.user.email,
                card = payment_form.cleaned_data['stripe_id']
             )
+
+            if customer.paid:
+               messages.error(request, "You have successfully paid")
+               request.session['cart'] = {}
+               return redirect('home')
+            else:
+               messages.error(request, "Unable take the payment")
+               
          except stripe.error.CardError:
             messages.error(request, "Your card was declined")
       else:
@@ -68,16 +76,18 @@ def checkout(request):
                currency = "EUR",
                card = payment_form.cleaned_data['stripe_id']
             )
+
+            if customer.paid:
+               messages.error(request, "You have successfully paid")
+               request.session['cart'] = {}
+               return redirect('home')
+            else:
+               messages.error(request, "Unable take the payment")
+
          except stripe.error.CardError:
             messages.error(request, "Your card was declined")
       
 
-      if customer.paid:
-         messages.error(request, "You have successfully paid")
-         request.session['cart'] = {}
-         return redirect('home')
-      else:
-         messages.error(request, "Unable take the payment")
 
    context = {
       'order_form': order_form,
