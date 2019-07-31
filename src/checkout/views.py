@@ -19,7 +19,6 @@ def checkout(request):
       order.date = timezone.now()
       order.save()
 
-
       cart = request.session.get('cart', {})
       total = 0
       for id, quantity in cart.items():
@@ -35,7 +34,6 @@ def checkout(request):
          if product.stock >= quantity:
             new_stock = product.stock - quantity
             product.stock = new_stock
-            product.save()
 
          else:
             context = {
@@ -49,45 +47,47 @@ def checkout(request):
 
             return render(request, "checkout.html", context)
 
-         order_line_item.save()
+         if request.user.is_authenticated:
+            try:
+               customer = stripe.Charge.create(
+                  amount = int(total * 100),
+                  currency = "EUR",
+                  description = request.user.email,
+                  card = payment_form.cleaned_data['stripe_id']
+               )
 
-      if request.user.is_authenticated:
-         try:
-            customer = stripe.Charge.create(
-               amount = int(total * 100),
-               currency = "EUR",
-               description = request.user.email,
-               card = payment_form.cleaned_data['stripe_id']
-            )
+               if customer.paid:
+                  messages.error(request, "You have successfully paid")
+                  request.session['cart'] = {}
+                  # if payment was successful then save a new stock level and order
+                  product.save()
+                  order_line_item.save()
+                  return redirect('home')
+               else:
+                  messages.error(request, "Unable take the payment")
 
-            if customer.paid:
-               messages.error(request, "You have successfully paid")
-               request.session['cart'] = {}
-               return redirect('home')
-            else:
-               messages.error(request, "Unable take the payment")
-               
-         except stripe.error.CardError:
-            messages.error(request, "Your card was declined")
-      else:
-         try:
-            customer = stripe.Charge.create(
-               amount = int(total * 100),
-               currency = "EUR",
-               card = payment_form.cleaned_data['stripe_id']
-            )
+            except stripe.error.CardError:
+               messages.error(request, "Your card was declined")
+         else:
+            try:
+               customer = stripe.Charge.create(
+                  amount = int(total * 100),
+                  currency = "EUR",
+                  card = payment_form.cleaned_data['stripe_id']
+               )
 
-            if customer.paid:
-               messages.error(request, "You have successfully paid")
-               request.session['cart'] = {}
-               return redirect('home')
-            else:
-               messages.error(request, "Unable take the payment")
+               if customer.paid:
+                  messages.error(request, "You have successfully paid")
+                  request.session['cart'] = {}
+                  # if payment was successful then save a new stock level and order
+                  product.save()
+                  order_line_item.save()
+                  return redirect('home')
+               else:
+                  messages.error(request, "Unable take the payment")
 
-         except stripe.error.CardError:
-            messages.error(request, "Your card was declined")
-      
-
+            except stripe.error.CardError:
+               messages.error(request, "Your card was declined")
 
    context = {
       'order_form': order_form,
