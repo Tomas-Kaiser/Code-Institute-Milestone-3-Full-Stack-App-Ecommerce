@@ -11,7 +11,7 @@ from .models import OrderLineItem
 stripe.api_key = settings.STRIPE_SECRET
 
 def checkout(request):
-   
+
    order_form = OrderForm(request.POST or None)
    payment_form = PaymentForm(request.POST or None)
 
@@ -70,15 +70,15 @@ def checkout(request):
             )
          except stripe.error.CardError:
             messages.error(request, "Your card was declined")
-     
+      
 
       if customer.paid:
          messages.error(request, "You have successfully paid")
          request.session['cart'] = {}
          return redirect('home')
       else:
-         messages.error(request, "Unable o take payment")
-      
+         messages.error(request, "Unable take the payment")
+
    context = {
       'order_form': order_form,
       'payment_form': payment_form,
