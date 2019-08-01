@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
 
 # Project 4 - Ecommerce (full stack web application)
-This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was build with semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2.
+This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was build with using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2.
 
 Live version deployed on Heroku [here](https://django-ecommerce-milestone.herokuapp.com/).
 
@@ -49,6 +49,21 @@ I used following technologies for this particular project:
 * [Adobe Xd](https://www.adobe.com/cz/products/xd.html)
 * [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
 * [GIMP](https://www.gimp.org/)
+
+# Features
+In accordance to the project brief, I have successfully implemented all of the required features.
+
+## Register Account 👤 ➕
+   * Anybody can register for free and create their own unique account. This is built using Django's authentication   and authorization to validate profile data. Passwords are hashed for security purposes!
+
+## Change Password 🔐
+   * Users can update their passwords from their profile page. They will receive an email with instructions on how    to reset the password.
+
+## Searching scooters
+   * Users can easily use search input to find what they are looking for.
+
+## View a particular scooter detail
+   * Users can click on a praticular scooter to see details about the choosen scooter.
 
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
