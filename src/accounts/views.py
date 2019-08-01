@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm, UserLoginForm
 
-
 def register_page(request):
    if request.user.is_authenticated:
       return redirect('home')
@@ -39,6 +38,7 @@ def profile(request):
 
 
 def login_page(request):
+   """ Log user in """
    if request.user.is_authenticated:
       return redirect('home')
 
