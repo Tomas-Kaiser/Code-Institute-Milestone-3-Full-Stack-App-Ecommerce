@@ -65,5 +65,12 @@ In accordance to the project brief, I have successfully implemented all of the r
 ## View a particular scooter detail
    * Users can click on a praticular scooter to see details about the choosen scooter.
 
+
+# Testing 
+A thorough mix of automated and manual testing have gone into building the project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.
+
+## HTML
+* [W3C HTML Validator](https://validator.w3.org/)
+
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
