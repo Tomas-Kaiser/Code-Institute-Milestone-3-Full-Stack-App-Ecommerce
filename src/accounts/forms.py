@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 class UserRegistrationForm(UserCreationForm):
+   """ Form to be used to register user """
    password1   = forms.CharField(label='Password', widget=forms.PasswordInput)
    password2   = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
 
@@ -18,7 +19,7 @@ class UserRegistrationForm(UserCreationForm):
       username = self.cleaned_data.get('username')
       qs = User.objects.filter(email=email).exclude(username=username)
       if qs.exists():
-         raise forms.ValidationError("This email already exists!")
+         raise forms.ValidationError("This email address already exists!")
       return email
 
    def clean_password(self):
@@ -34,7 +35,6 @@ class UserRegistrationForm(UserCreationForm):
       return password2
 
 class UserLoginForm(forms.Form):
-   """ Form o be used to log user in """
-
+   """ Form to be used to log user in """
    username = forms.CharField()
    password = forms.CharField(widget=forms.PasswordInput)
