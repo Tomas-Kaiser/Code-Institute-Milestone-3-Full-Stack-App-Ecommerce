@@ -71,6 +71,12 @@ A thorough mix of automated and manual testing have gone into building the proje
 
 ## HTML
 * [W3C HTML Validator](https://validator.w3.org/)
+   * All 25 .html files have been checked
+   * Other validation issues are related to Django Templating not being recognized by W3C:
+      * **Warning:** Consider adding a `lang` attribute to the `html` start tag to declare the language of this document
+      * **Error:** bad value `{% foo %}`
+      * **Error:** Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
+      * **Error:** Element `head` is missing a required instance of child element `title`
 
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
