@@ -84,6 +84,16 @@ A thorough mix of automated and manual testing have gone into building the proje
       * `-webkit-background-size` is an unknown vendor extension
       * `-moz-background-size` is an unknown vendor extension
       * `-o-background-size` is an unknown vendor extension
+
+## JavaScript
+* [JSHint](https://jshint.com/)
+   * Not found any major **errors**
+
+## Python
+* [PEP8 online](http://pep8online.com/)
+   * Not found any major **errors**
+
+
    
 
 ## Contributing
