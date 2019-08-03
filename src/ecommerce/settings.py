@@ -170,7 +170,7 @@ MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = "https://" + AWS_S3_CUSTOM_DOMAIN + '/media/' # Is this correct way?
+MEDIA_URL = "https://" + AWS_S3_CUSTOM_DOMAIN + '/media/'
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
