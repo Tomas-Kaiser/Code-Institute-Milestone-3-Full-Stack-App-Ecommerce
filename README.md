@@ -78,5 +78,13 @@ A thorough mix of automated and manual testing have gone into building the proje
       * **Error:** Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
       * **Error:** Element `head` is missing a required instance of child element `title`
 
+## CSS
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+   * The W3C Jugsaw validator did not found any errors. Only 3 **warnings**
+      * `-webkit-background-size` is an unknown vendor extension
+      * `-moz-background-size` is an unknown vendor extension
+      * `-o-background-size` is an unknown vendor extension
+   
+
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
