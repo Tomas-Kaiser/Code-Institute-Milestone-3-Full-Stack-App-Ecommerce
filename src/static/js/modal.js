@@ -5,7 +5,7 @@ if (selectedModel.length != 0) {
 
    modelClose = () => {
       selectedModel.modal('hide');
-   }:
+   };
 
    setTimeout(modelClose, 3000);
 }
