@@ -94,6 +94,31 @@ A thorough mix of automated and manual testing have gone into building the proje
    * Not found any major **errors**
 
 
+# Deployment
+This project is deployed on heroku: 
+
+## Local Deployment
+It's highly recommended to work in a virtual environment, but not absolutely required.
+
+In order to run this project locally on your own system, you need following:
+   * [Python3](https://www.python.org/downloads/) to run the application
+   * [PIP](https://pip.pypa.io/en/stable/installing/) to install all requirements
+   * [GIT](https://www.atlassian.com/git/tutorials/install-git) for cloning and version control or you can just download the repo in zip format
+   * IDE (for example [Microsoft Visual Studio Code](https://code.visualstudio.com/))
+
+Next steps in order to proceed with local deployment:
+   * Clone the repo with command `git clone https://github.com/TravelTimN/ci-milestone05-fsfw.git` or donwloand the zip file
+   * Navigate to the correct file location after unpacking the files `cd <path to folder>`
+   * Create `.env` with `pipenv shell`
+   * Install all requirements with `pip3 -r requirements.txt`
+   * launche the project `python manage.py runserver`
+   * The Django server should be running locally now on [http://127.0.0.1:8000/][http://127.0.0.1:8000/]
+   * When running the Django server for the first time, it should create a new SQLite3 database file: db.sqlite3
+   * next steps are: `python manage.py makemigrations` and `python manage.py migrate`
+   * To have an access to Django Admin Panel, you must generate a superuser:
+      * `python manage.py createsuperuser`
+   
+
    
 
 ## Contributing
