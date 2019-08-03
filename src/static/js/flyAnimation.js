@@ -5,7 +5,7 @@
          const imgToDrag = $(this).closest('.card').find("img").eq(0);
 
          if (imgToDrag) {
-            const imgClone = imgToDrag.clone()
+            const imgClone = imgToDrag.clone();
 
             imgClone.offset({
                top: imgToDrag.offset().top,
@@ -24,14 +24,14 @@
                height: "75px",
                top: cart.offset().top + 10,
                left: cart.offset().left + 10,
-            })
+            });
 
             // Delete clone
             imgClone.animate({
                'width': 0,
                'height': 0,
             }, function () {
-               $(this).detach()
+               $(this).detach();
             });
          }
       });

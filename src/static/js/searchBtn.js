@@ -6,14 +6,14 @@ $(document).ready(function () {
    if (searchInput.val().length === 0) {
       searchBtn.css({"cursor": "not-allowed"});
    }
+
    searchInput.keyup(function () {          
       if ($(this).val().length > 0) {
-         searchBtn.prop('disabled', false)
+         searchBtn.prop('disabled', false);
          searchBtn.css({"cursor": "pointer"});
       } else {
-         searchBtn.prop('disabled', true)
+         searchBtn.prop('disabled', true);
          searchBtn.css({"cursor": "not-allowed"});
       }
-   })
-
+   });
 });
