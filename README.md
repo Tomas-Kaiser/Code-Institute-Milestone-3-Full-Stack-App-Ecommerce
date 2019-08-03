@@ -118,6 +118,24 @@ Next steps in order to proceed with local deployment:
    * To have an access to Django Admin Panel, you must generate a superuser:
       * `python manage.py createsuperuser`
    
+## Remote Deployment
+This project is currently deployed on [Heroku](https://heroku.com) using the master branch on GitHub. You can proceed to deploy it remotely with the following steps:
+   * Create a requirements.txt
+      * `pip3 freeze --local > requirements.txt`
+   * Create a Procfile to tell Heroku what type of application is being deployed using gunicorn, and how to run it:
+      * `echo web: gunicorn main.wsgi:application > Procfile`
+   * Sign up for a free Heroku account (max 5 projects are for free tier), then create your project app and click the Deploy tab. You can also Connect your GitHub as the Deployment Method.
+   * In the Heroku Resources tab, navigate to the _Add-Ons_ section and search for **Heroku Postgres**. Make sure to select the free Hobby level. This will allow you to have a remote database instead of using the local sqlite3 database, and can be found in the Settings tab. You'll need to update your .env file with your new database-url details
+   * In the Heroku Settings tab, click on the Reveal Config Vars button to configure environmental variables. You might need to copy/paste all of the .env key value pairs into the config variables
+   * Update the settings.py file to connect the remote database using this Python package: `dj_database_url`
+   * Re-build the migrations and create a superuser to your new remote database
+   * Sign up for a free [Amazon AWS](https://aws.amazon.com/) account in order to host your staticfiles and media files. From the **S3 buckets** section, you'll need to create a new unique bucket. Find more here, how to set up [AWS S3 Bucket](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html)
+   * After creating your AWS S3 Bucket, you should now be able to push the static files to AWS if everything is configured properly using this command `python manage.py collectstatic`
+   * Sign up for a free [Stripe](https://stripe.com/ie) account. Navigate to the Developers section, and click on API Keys. You should have two confidential keys which need to be added to your .env file, as well as your Heroku config vars.
+      * `Publishable Key`: pk_test_key and `Secret Key`: sk_test_key
+Now your project should be completely setup and ready for remote deployment! 
+
+
 
    
 
