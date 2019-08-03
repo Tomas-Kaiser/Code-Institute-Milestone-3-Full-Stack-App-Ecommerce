@@ -4,10 +4,9 @@
 
    // AJAX request when click on add product btn
    $(function () {
-      console.log(url)
       $('.addProductBtn').on('click', function (e) {
-         let productId = $(this).attr("productId")
-         url = url.replace('0', productId)
+         let productId = $(this).attr("productId");
+         url = url.replace('0', productId);
 
          $.ajax({
             type: 'POST',
@@ -19,11 +18,11 @@
             },
             success: function (data) {
                if ($('.badge').length === 0) {
-                  $('#cart').append("<span class='badge badge-warning'>1</span>")
+                  $('#cart').append("<span class='badge badge-warning'>1</span>");
                } else {
-                  let numberItems = $('.badge').text()
-                  numberItems++
-                  $('.badge').text(numberItems)
+                  let numberItems = $('.badge').text();
+                  numberItems++;
+                  $('.badge').text(numberItems);
                }
             }
          });
