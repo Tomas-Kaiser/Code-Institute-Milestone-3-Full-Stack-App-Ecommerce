@@ -116,6 +116,8 @@ A thorough mix of automated and manual testing have gone into building the proje
 
 ### Automated Testing
 
+With `TestCase` and `SimpleTestCase`, I built **36** different tests to test most of my python views, forms and models.
+
 In addition to the `TestCase` and coverage.py tests, I have used [Travis-CI](https://travis-ci.org/) to test Continuous Integration. At the beginning, I had the problem due to the fact that my project is in src dir instead of top-level dirm which is why there are many various commits, but in the end it was sordted with successful passing build badge.
 
 [![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
