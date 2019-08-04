@@ -5,6 +5,19 @@ This project is built for [Code Institute](https://codeinstitute.net/) as a part
 
 Live version deployed on Heroku [here](https://django-ecommerce-milestone.herokuapp.com/).
 
+## Table of Contents
+* [UX](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#ux)
+   * [User Stories](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##user-stories)
+   * [Wireframes](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##wireframes)
+* [Technologies Used](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##technologies-used)
+* [Features](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##features)
+   * [Register Account](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##register-account--)
+   * [Change Password](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##change-password-)
+   * [Searching scooters](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##searching-scooters)
+   * [View a particular scooter detail](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##view-a-particular-scooter-detail)
+* [Testing](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##testing)
+   *
+
 ## UX
 This is aiming at people who are looking for buying a kick scooter, eScooter or scooter for kid.
 
@@ -50,26 +63,26 @@ I used following technologies for this particular project:
 * [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
 * [GIMP](https://www.gimp.org/)
 
-# Features
+## Features
 In accordance to the project brief, I have successfully implemented all of the required features.
 
-## Register Account 👤 ➕
+### Register Account 👤 ➕
    * Anybody can register for free and create their own unique account. This is built using Django's authentication   and authorization to validate profile data. Passwords are hashed for security purposes!
 
-## Change Password 🔐
+### Change Password 🔐
    * Users can update their passwords from their profile page. They will receive an email with instructions on how    to reset the password.
 
-## Searching scooters
+### Searching scooters
    * Users can easily use search input to find what they are looking for.
 
-## View a particular scooter detail
+### View a particular scooter detail
    * Users can click on a praticular scooter to see details about the choosen scooter.
 
 
-# Testing 
+## Testing 
 A thorough mix of automated and manual testing have gone into building the project. In addition to tests, I have validated all files against online validation sites, and checked compatibilities across various modern browsers and devices.
 
-## HTML
+### HTML
 * [W3C HTML Validator](https://validator.w3.org/)
    * All 25 .html files have been checked
    * Other validation issues are related to Django Templating not being recognized by W3C:
@@ -78,26 +91,26 @@ A thorough mix of automated and manual testing have gone into building the proje
       * **Error:** Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
       * **Error:** Element `head` is missing a required instance of child element `title`
 
-## CSS
+### CSS
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
    * The W3C Jugsaw validator did not found any errors. Only 3 **warnings**
       * `-webkit-background-size` is an unknown vendor extension
       * `-moz-background-size` is an unknown vendor extension
       * `-o-background-size` is an unknown vendor extension
 
-## JavaScript
+### JavaScript
 * [JSHint](https://jshint.com/)
    * Not found any major **errors**
 
-## Python
+### Python
 * [PEP8 online](http://pep8online.com/)
    * Not found any major **errors**
 
 
-# Deployment
+## Deployment
 This project is deployed on heroku: 
 
-## Local Deployment
+### Local Deployment
 It's highly recommended to work in a virtual environment, but not absolutely required.
 
 In order to run this project locally on your own system, you need following:
@@ -118,7 +131,7 @@ Next steps in order to proceed with local deployment:
    * To have an access to Django Admin Panel, you must generate a superuser:
       * `python manage.py createsuperuser`
    
-## Remote Deployment
+### Remote Deployment
 This project is currently deployed on [Heroku](https://heroku.com) using the master branch on GitHub. You can proceed to deploy it remotely with the following steps:
    * Create a requirements.txt
       * `pip3 freeze --local > requirements.txt`
