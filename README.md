@@ -114,6 +114,12 @@ A thorough mix of automated and manual testing have gone into building the proje
 * [PEP8 online](http://pep8online.com/)
    * Not found any major **errors**
 
+### Automated Testing
+
+In addition to the `TestCase` and coverage.py tests, I have used [Travis-CI](https://travis-ci.org/) to test Continuous Integration. At the beginning, I had the problem due to the fact that my project is in src dir instead of top-level dirm which is why there are many various commits, but in the end it was sordted with successful passing build badge.
+
+[![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
+
 
 ## Deployment
 This project is deployed on heroku: 
