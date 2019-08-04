@@ -1,9 +1,12 @@
 [![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
 
-# Project 4 - Ecommerce (full stack web application) :gift_heart:
+# Project 4 - Ecommerce (full stack web application)
 This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was build with using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2.
 
+:grey_exclamation: The project had been built with the project requirements published before July 2019. :grey_exclamation:
+
 Live version deployed on Heroku [here](https://django-ecommerce-milestone.herokuapp.com/).
+
 
 ## Table of Contents
 * [UX](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#ux)
@@ -20,6 +23,7 @@ Live version deployed on Heroku [here](https://django-ecommerce-milestone.heroku
    * [CSS](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#css)
    * [JavaScript](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#javascript)
    * [Python](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#python)
+   * [Automated Testing](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#automated-testing)
 * [Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#deployment)
    * [Local Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#local-deployment)
    * [Remote Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#remote-deployment)
@@ -71,10 +75,11 @@ I used following technologies for this particular project:
 * [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
 * [GIMP](https://www.gimp.org/)
 
+
 ## Features
 In accordance to the project brief, I have successfully implemented all of the required features.
 
-### Register Account 👤 ➕
+### Register Account :heavy_plus_sign:
    * Anybody can register for free and create their own unique account. This is built using Django's authentication   and authorization to validate profile data. Passwords are hashed for security purposes!
 
 ### Change Password :closed_lock_with_key:
@@ -122,6 +127,18 @@ In addition to the `TestCase` and coverage.py tests, I have used [Travis-CI](htt
 
 [![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
 
+I also used Chrome Lighthouse:
+The Lighthouse is an open-source automated tool that audits website for performance, accessibility, best practices & SEO. The website current score as follows:
+
+```
+> Performance at 96
+> Accessibility at 91
+> Best practices at 86
+> SEO at 90
+
+the highest score is 100
+```
+
 
 ## Deployment
 This project is deployed on heroku: 
@@ -165,8 +182,5 @@ This project is currently deployed on [Heroku](https://heroku.com) using the mas
 Now your project should be completely setup and ready for remote deployment! 
 
 
-
-   
-
-## Contributing
+## Contributing :credit_card:
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
