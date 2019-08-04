@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce.svg?branch=master)](https://travis-ci.org/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce)
 
-# Project 4 - Ecommerce (full stack web application)
+# Project 4 - Ecommerce (full stack web application) :gift_heart:
 This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was build with using semantic HTML5, CSS3, JavaScript along with Python framework Django 2.2.
 
 Live version deployed on Heroku [here](https://django-ecommerce-milestone.herokuapp.com/).
@@ -77,7 +77,7 @@ In accordance to the project brief, I have successfully implemented all of the r
 ### Register Account 👤 ➕
    * Anybody can register for free and create their own unique account. This is built using Django's authentication   and authorization to validate profile data. Passwords are hashed for security purposes!
 
-### Change Password 🔐
+### Change Password :closed_lock_with_key:
    * Users can update their passwords from their profile page. They will receive an email with instructions on how    to reset the password.
 
 ### Searching scooters
