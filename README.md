@@ -7,16 +7,24 @@ Live version deployed on Heroku [here](https://django-ecommerce-milestone.heroku
 
 ## Table of Contents
 * [UX](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#ux)
-   * [User Stories](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##user-stories)
-   * [Wireframes](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##wireframes)
-* [Technologies Used](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##technologies-used)
-* [Features](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##features)
-   * [Register Account](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##register-account--)
-   * [Change Password](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##change-password-)
-   * [Searching scooters](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##searching-scooters)
-   * [View a particular scooter detail](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##view-a-particular-scooter-detail)
-* [Testing](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce##testing)
-   *
+   * [User Stories](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#user-stories)
+   * [Wireframes](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#wireframes)
+* [Technologies Used](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#technologies-used)
+* [Features](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#features)
+   * [Register Account](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#register-account--)
+   * [Change Password](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#change-password-)
+   * [Searching scooters](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#searching-scooters)
+   * [View a particular scooter detail](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#view-a-particular-scooter-detail)
+* [Testing](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#testing)
+   * [HTML](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#html)
+   * [CSS](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#css)
+   * [JavaScript](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#javascript)
+   * [Python](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#python)
+* [Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#deployment)
+   * [Local Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#local-deployment)
+   * [Remote Deployment](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#remote-deployment)
+* [Contriting](https://github.com/Tomas-Kaiser/Code-Institute-Milestone-4-Full-Stack-App-Ecommerce#contributing)
+
 
 ## UX
 This is aiming at people who are looking for buying a kick scooter, eScooter or scooter for kid.
