@@ -6,7 +6,7 @@ class ProductQuerySet(models.QuerySet):
               return self.filter(slug__icontains='kick-scooter')
 
        def e_scooter(self):
-              return self.filter(slug__icontains='eScooter')
+              return self.filter(slug__icontains='e-scooter')
 
        def kid_scooter(self):
               return self.filter(slug__icontains='kid-scooter')
