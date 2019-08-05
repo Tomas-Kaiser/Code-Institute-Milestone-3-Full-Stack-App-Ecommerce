@@ -76,13 +76,13 @@ I used following technologies for this particular project:
 
 
 ## Features
-In accordance to the project brief, I have successfully implemented all of the required features.
+Based on the project brief, I have successfully implemented the follow features:
 
 ### Register Account :heavy_plus_sign:
    * Anybody can register for free and create their own unique account. This is built using Django's authentication   and authorization to validate profile data. Passwords are hashed for security purposes!
 
 ### Change Password :closed_lock_with_key:
-   * Users can update their passwords from their profile page. They will receive an email with instructions on how    to reset the password.
+   * Users can update their passwords from their profile page. They will receive an email with instructions with the link, where the password can be changed.
 
 ### Searching scooters
    * Users can easily use search input to find what they are looking for.
@@ -137,6 +137,23 @@ The Lighthouse is an open-source automated tool that audits website for performa
 
 the highest score is 100
 ```
+
+### Manual Testing
+
+The manual testing was accomplished mainly by using following technologies/tools:
+
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) - Chrome DevTools is a set of web developer tools built directly into the Google Chrome browser. DevTools can help you edit pages on-the-fly and diagnose problems quickly, which ultimately helps you build better websites, faster.
+
+* Web browers such as:
+   * Chrome
+   * Opera
+   * Mozilla
+   * Microsoft Edge
+   * Safari
+
+* Devices:
+   * Desktop
+   * Mobile Phone (iPhone S5)
 
 
 ## Deployment
