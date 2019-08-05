@@ -157,7 +157,7 @@ The manual testing was accomplished mainly by using following technologies/tools
 
 
 ## Deployment
-This project is deployed on heroku: 
+This project is deployed on heroku: https://django-ecommerce-milestone.herokuapp.com/
 
 ### Local Deployment
 It's highly recommended to work in a virtual environment, but not absolutely required.
