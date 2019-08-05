@@ -53,8 +53,8 @@ This is aiming at people who are looking for buying a kick scooter, eScooter or 
 ### Wireframes:  
 The following wireframes were created in order to provide a starting point for the website skeleton:
 
-* [mobile device](wireframes/E-commerce-mobile)
-* [desktop device](wireframes/E-commerce-desktop)
+* [mobile device](wireframes)
+* [desktop device](wireframes)
 
 
 ## Technologies Used
