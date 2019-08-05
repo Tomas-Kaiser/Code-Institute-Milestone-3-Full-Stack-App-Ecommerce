@@ -31,24 +31,23 @@ Live version deployed on Heroku [here](https://django-ecommerce-milestone.heroku
 
 
 ## UX
-This is aiming at people who are looking for buying a kick scooter, eScooter or scooter for kid.
+This is aiming at people who are looking for buying a kick scooter, eScooter or scooter for kids.
 
 ### User Stories
 
-* As a user I want sing up so that I have own account
+* As a user I want to sing up so that I have my own account
 * As a user I want to login so that I can see my profile page
 * As a user I want to logout 
-* As a user I want to see my main page as first so that I can easily select which scooter I want
+* As a user I want to see my main page as the first so that I can easily select which scooter I want
 * As a user I want to see shopping cart on every page
-* As a user I want to see sammery of my cart so that I can easily see what I am going to buy
-* As a user I want to see sammery of my cart so that I can easily remove itmes
-* As a user I want to see sammery of my cart so that I can easily amended amount of itmes
-* As a user I want to see sammery of my cart so that I can easily see how much it costs
-* As a user I want to see checkout so that I can proceed with payment
-* As a user I want to see in checkout page a sammery of shopping cart so that I see what I am going to 
-* As a user I want to search field so that I can look up a scooter
+* As a user I want to see a summary of my cart so that I can easily see my purchases
+* As a user I want to see a summary of my cart so that I can easily remove items
+* As a user I want to see a summary of my cart so that I can easily amend the amount of items
+* As a user I want to see a summary of my cart so that I can easily see how much it costs
+* As a user I want to have intuitive access to the checkout page so that I can easily proceed with the payment
+* As a user I want to have a search field so that I can look up items
 * As a user I want to see if the scooter is in stock
-* As a user I want to use a mobile phone for buying a scooter
+* As a user I want to have mobile friendly website layout so that I can use my smart phone to purchase products
 
 ### Wireframes:  
 The following wireframes were created in order to provide a starting point for the website skeleton:
