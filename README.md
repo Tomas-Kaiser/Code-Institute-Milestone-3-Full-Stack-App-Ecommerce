@@ -174,7 +174,7 @@ Next steps in order to proceed with local deployment:
    * Create `.env` with `pipenv shell`
    * Install all requirements with `pip3 -r requirements.txt`
    * launche the project `python manage.py runserver`
-   * The Django server should be running locally now on [http://127.0.0.1:8000/][http://127.0.0.1:8000/]
+   * The Django server should be running locally now on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
    * When running the Django server for the first time, it should create a new SQLite3 database file: db.sqlite3
    * next steps are: `python manage.py makemigrations` and `python manage.py migrate`
    * To have an access to Django Admin Panel, you must generate a superuser:
