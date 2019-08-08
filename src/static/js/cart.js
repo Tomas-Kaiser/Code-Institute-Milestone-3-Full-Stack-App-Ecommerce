@@ -15,7 +15,7 @@ $(window).on("scroll", function () {
       $('#cart').css({
          "position": "absolute",
          "top": "9px",
-         "right": "185px",
+         "right": "155px",
          "border": "",
          "background": "none",
       });
